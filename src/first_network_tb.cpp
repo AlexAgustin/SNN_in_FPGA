@@ -25,7 +25,7 @@ int main() {
     std::uniform_real_distribution<> dis(0.0, 1.0);
 
     for (int i=0; i<NUM_ITER; i++){
-        archivoSalida << "Corrientes de entrada " << i+1 << ":" << std::endl;
+        archivoSalida << "Corrientes de entrada " << i+1 << ": " << std::endl;
         for (int j = 0; j < NUM_ENTRADAS; j++) {
             double randomValue = dis(gen); // Genera un valor aleatorio entre 0 y 1
             corrientesEntrada[j] = (randomValue <= PROB_ENTRADA_SPIKE) ? POTEN_NO_SPIKE : POTEN_SPIKE; // Mapea el valor a 0 o 2
