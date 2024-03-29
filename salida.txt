@@ -1,13 +1,13 @@
 Corrientes de entrada 1:
-Entrada neurona 1:0
-Entrada neurona 2:0
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
 Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
@@ -27,15 +27,15 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 2:
-Entrada neurona 1:0
-Entrada neurona 2:2
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
 Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 1.9801
+Potencial de la membrana de la neurona: 3.9405
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
@@ -55,15 +55,15 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 3:
-Entrada neurona 1:0
-Entrada neurona 2:2
+Entrada neurona 1: 2
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 3.9405
+Potencial de la membrana de la neurona: 5.88139
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
@@ -83,26 +83,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 4:
-Entrada neurona 1:2
-Entrada neurona 2:0
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
+Neurona 1
+Potencial de la membrana de la neurona: 1.9604
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 2
+
+RESULTADOS CAPA 2: 
 Neurona 1
 Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 3.90129
-Potencial de salida de la neurona: 0
-
-RESULTADOS CAPA 2: 
-Neurona 1
-Potencial de la membrana de la neurona: 0
-Potencial de salida de la neurona: 0
-Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -111,26 +111,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 5:
-Entrada neurona 1:2
-Entrada neurona 2:2
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 3.9405
+Potencial de la membrana de la neurona: 1.94089
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 5.84257
+Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9604
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9604
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9604
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -139,26 +139,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 6:
-Entrada neurona 1:2
-Entrada neurona 2:0
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 5.88139
+Potencial de la membrana de la neurona: 1.92158
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 5.78444
+Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.94089
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.94089
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.94089
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -167,26 +167,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 7:
-Entrada neurona 1:0
-Entrada neurona 2:2
+Entrada neurona 1: 0
+Entrada neurona 2: 0
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 5.82287
+Potencial de la membrana de la neurona: 1.90246
 Potencial de salida de la neurona: 0
 Neurona 2
 Potencial de la membrana de la neurona: 0
-Potencial de salida de la neurona: 2
+Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 1.9801
+Potencial de la membrana de la neurona: 1.92158
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 1.9801
+Potencial de la membrana de la neurona: 1.92158
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 1.9801
+Potencial de la membrana de la neurona: 1.92158
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -195,26 +195,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 8:
-Entrada neurona 1:0
-Entrada neurona 2:2
+Entrada neurona 1: 0
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 5.76493
+Potencial de la membrana de la neurona: 1.88353
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 1.9801
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 1.9604
+Potencial de la membrana de la neurona: 1.90246
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 1.9604
+Potencial de la membrana de la neurona: 1.90246
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 1.9604
+Potencial de la membrana de la neurona: 1.90246
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -223,26 +223,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 9:
-Entrada neurona 1:2
-Entrada neurona 2:0
+Entrada neurona 1: 2
+Entrada neurona 2: 2
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 0
-Potencial de salida de la neurona: 2
+Potencial de la membrana de la neurona: 3.84489
+Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 3.9405
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 3.92099
+Potencial de la membrana de la neurona: 1.88353
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 3.92099
+Potencial de la membrana de la neurona: 1.88353
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 3.92099
+Potencial de la membrana de la neurona: 1.88353
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
@@ -251,26 +251,26 @@ Potencial de la membrana de la neurona: 0
 Potencial de salida de la neurona: 0
 
 Corrientes de entrada 10:
-Entrada neurona 1:0
-Entrada neurona 2:2
+Entrada neurona 1: 2
+Entrada neurona 2: 0
 
 RESULTADOS CAPA 1: 
 Neurona 1
-Potencial de la membrana de la neurona: 0
+Potencial de la membrana de la neurona: 5.78673
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 1.9801
+Potencial de la membrana de la neurona: 3.90129
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 2: 
 Neurona 1
-Potencial de la membrana de la neurona: 3.88198
+Potencial de la membrana de la neurona: 1.86479
 Potencial de salida de la neurona: 0
 Neurona 2
-Potencial de la membrana de la neurona: 3.88198
+Potencial de la membrana de la neurona: 1.86479
 Potencial de salida de la neurona: 0
 Neurona 3
-Potencial de la membrana de la neurona: 3.88198
+Potencial de la membrana de la neurona: 1.86479
 Potencial de salida de la neurona: 0
 
 RESULTADOS CAPA 3: 
