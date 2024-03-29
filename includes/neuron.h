@@ -3,6 +3,8 @@
 #include <random>
 #include <vector>
 
+#include "../includes/defines.h"
+
 enum class EstadoNeurona {
     RECIBIENDO,
     ENESPERA
@@ -13,19 +15,16 @@ private:
     double potencialMembrana;
     double potencialSalida;
     EstadoNeurona estado;
-    const double potencialReposo = 0.0;
-    const double thr = 4.0;
-    const double decayFactor = exp(-1.0 / 10); //Cuanto mas grande el divisor, mas lento decae el potencial de membrana
-    const double cooldown = 1.0;
+    const double potencialReposo = POTEN_REPOSO;
+    const double thr = THRESHOLD;
+    const double decayFactor = exp(-1.0 / DECAY_EXP_FACTOR); //Cuanto mas grande el divisor, mas lento decae el potencial de membrana
+    const double cooldown = COOLDOWN;
     int conteoRefractario;
 
 public:
     //Constructoras
-    NeuronaLIF() : potencialMembrana(0.0), potencialSalida(0.0), estado(EstadoNeurona::RECIBIENDO), conteoRefractario(0) {}
-
-    NeuronaLIF(double pMembrana, double pSalida, EstadoNeurona estado, double reposo, double threshold, double decay, double t_espera, int cont): 
-        potencialMembrana(pMembrana), potencialSalida(pSalida), estado(estado), potencialReposo(reposo), thr(threshold), decayFactor(decay), cooldown(t_espera), conteoRefractario(cont) {}
-
+    NeuronaLIF() : potencialMembrana(POTEN_REPOSO), potencialSalida(POTEN_REPOSO), estado(EstadoNeurona::RECIBIENDO), conteoRefractario(0) {}
+    
     //Getters y setters
     double getPotencialMembrana() const {
         return potencialMembrana;
@@ -84,4 +83,4 @@ public:
     }
 };
 
-void simulate(double* corrientesEntrada, NeuronaLIF* n);
+void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n);
