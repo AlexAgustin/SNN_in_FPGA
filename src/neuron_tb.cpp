@@ -1,4 +1,5 @@
-#include "neuron.h"
+#include "../includes/neuron.h"
+#include "../includes/defines.h"
 
 int main() {
     NeuronaLIF n;
@@ -13,7 +14,7 @@ int main() {
         std::cout << "Entradas numero " << i+1 << ":" << std::endl;
         for (int j=0; j<NUM_ENTRADAS; j++) {
             double randomValue = dis(gen); // Genera un valor aleatorio entre 0 y 1
-            corrientesEntrada[j] = (randomValue <= 0.3) ? 0.0 : 2.0; // Mapea el valor a 0 o 2
+            corrientesEntrada[j] = (randomValue <= 0.5) ? POTEN_NO_SPIKE : POTEN_SPIKE; // Mapea el valor a 0 o 2
             std::cout << corrientesEntrada[j] << std::endl;
         }
 

@@ -1,15 +1,16 @@
-#include "neuron.h"
+#include "../includes/neuron.h"
+#include "../includes/defines.h"
 
-void integrar_Entradas(double* corrientesEntrada, NeuronaLIF* n) {
+void integrarEntradas(double* corrientesEntrada, NeuronaLIF* n) {
     std::cout << "Integrando entradas..." << std::endl;
-    double aux= n->getPotencialMembrana();
+    double aux= 0;
 
     BUCLE_AUX_INTEGRAR: for(int i=0; i<NUM_ENTRADAS; i++){
         aux += corrientesEntrada[i];
         //std::cout << potencialMembrana << std::endl;
     }
 
-    n->setPotencialMembrana(aux);
+    n->incPotencialMembrana(aux);
 
 }
 
@@ -20,7 +21,7 @@ void simulate(double* corrientesEntrada, NeuronaLIF* n) {
                 // En caso de que al sumar las entradas de un instante el potencial de la neurona supere el threshold, se dispara un spike de salida
                 // Si no se supero el thr, se le restara al potencial la fuga
 
-                integrar_Entradas(corrientesEntrada, n);; //Intregra todas las entradas en un instante de tiempo
+                integrarEntradas(corrientesEntrada, n);; //Intregra todas las entradas en un instante de tiempo
 
                 if (n->getPotencialMembrana() >= n->getThr()) {
                     n->setPotencialMembrana(n->getPotencialReposo());    //Devuelve al potencial de reposo el potencial de la membrana
