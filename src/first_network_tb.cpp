@@ -29,7 +29,7 @@ int main() {
         for (int j = 0; j < NUM_ENTRADAS; j++) {
             double randomValue = dis(gen); // Genera un valor aleatorio entre 0 y 1
             corrientesEntrada[j] = (randomValue <= PROB_ENTRADA_SPIKE) ? POTEN_NO_SPIKE : POTEN_SPIKE; // Mapea el valor a 0 o 2
-            archivoSalida << corrientesEntrada[j] << std::endl;
+            archivoSalida << "Entrada neurona " << j+1 << ":" << corrientesEntrada[j] << std::endl;
         }
 
         //Capa de entrada (1)
