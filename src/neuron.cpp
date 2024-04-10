@@ -19,9 +19,13 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
             case EstadoNeurona::RECIBIENDO:
                 // Estado en el que la neurona esta recibiendo entradas e integrandolas a su potencial
                 // En caso de que al sumar las entradas de un instante el potencial de la neurona supere el threshold, se dispara un spike de salida
-                // Si no se supero el thr, se le restara al potencial la fuga
+                
+                //Calcula el valor del potencial aplicandole la fuga
+                if(n->getPotencialMembrana() * n->getDecayFactor() >= n->getPotencialReposo()) 
+                        n->setPotencialMembrana(n->getPotencialMembrana() * n->getDecayFactor()); 
 
-                integrarEntradas(corrientesEntrada, numEntradas, n); //Intregra todas las entradas en un instante de tiempo
+                //Intregra todas las entradas en un instante de tiempo
+                integrarEntradas(corrientesEntrada, numEntradas, n); 
 
                 if (n->getPotencialMembrana() >= n->getThr()) {
                     n->setPotencialMembrana(n->getPotencialReposo());    //Devuelve al potencial de reposo el potencial de la membrana
@@ -29,10 +33,7 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
                     std::cout << "Neurona disparada!" << std::endl;
                     n->setEstado(EstadoNeurona::ENESPERA);   //Cambio de estado
                 }
-                else 
-                    //Calcula el valor del potencial aplicandole la fuga
-                    if(n->getPotencialMembrana() * n->getDecayFactor() >= n->getPotencialReposo()) 
-                        n->setPotencialMembrana(n->getPotencialMembrana() * n->getDecayFactor()); 
+
                 break;
 
             case EstadoNeurona::ENESPERA:
