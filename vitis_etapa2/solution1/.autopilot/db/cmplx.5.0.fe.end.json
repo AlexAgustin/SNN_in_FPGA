@@ -1,0 +1,11 @@
+{
+    "0": {
+        "name": "simulate_SNN",
+        "file": "snn.cpp",
+        "fileloc": "3",
+        "instructions": "3",
+        "total_instructions": "3",
+        "calls": "",
+        "basicblocks": "1"
+    }
+}

@@ -16,6 +16,27 @@
       ]
     },
     "slx": false,
+    "sourceFile": "C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "simulate_SNN",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "simulate_SNN"
+        }
+      ]
+    },
+    "slx": false,
     "sourceFile": "C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/csynth.tcl",
     "sourceLine": 19,
     "success": true

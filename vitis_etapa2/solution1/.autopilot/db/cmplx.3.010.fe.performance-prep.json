@@ -1,0 +1,47 @@
+{
+  "0": {
+    "basicblocks": 7,
+    "calls": "2 2 2 2 2 1",
+    "file": "snn.cpp",
+    "fileloc": 3,
+    "instructions": 231,
+    "loads": {
+      "L": 29
+    },
+    "name": "simulate_SNN",
+    "stores": {
+      "L": 29
+    },
+    "total_instructions": 505
+  },
+  "1": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "neuron.cpp",
+    "fileloc": 17,
+    "instructions": 44,
+    "loads": {
+      "L": 5
+    },
+    "name": "simulate",
+    "stores": {
+      "L": 9
+    },
+    "total_instructions": 44
+  },
+  "2": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "neuron.cpp",
+    "fileloc": 17,
+    "instructions": 46,
+    "loads": {
+      "L": 5
+    },
+    "name": "simulate",
+    "stores": {
+      "L": 9
+    },
+    "total_instructions": 46
+  }
+}

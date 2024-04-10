@@ -44279,6 +44279,10 @@ namespace std
 # 52 "C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\random" 2 3
 # 4 "src/../includes/snn.h" 2
 
+# 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 1 3
+# 40 "C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 3
+# 6 "src/../includes/snn.h" 2
+
 # 1 "src/../includes/../includes/neuron.h" 1
 
 # 1 "C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 1 3
@@ -44369,7 +44373,7 @@ public:
 };
 
 void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n);
-# 6 "src/../includes/snn.h" 2
+# 8 "src/../includes/snn.h" 2
 
 __attribute__((sdx_kernel("simulate_SNN", 0))) int simulate_SNN ();
 # 2 "src/snn.cpp" 2
@@ -44379,21 +44383,25 @@ __attribute__((sdx_kernel("simulate_SNN", 0))) int simulate_SNN () {
 #pragma HLSDIRECTIVE TOP name=simulate_SNN
 # 3 "src/snn.cpp"
 
-    std::vector<NeuronaLIF> capa1(2);
-    std::vector<NeuronaLIF> capa2(3);
-    std::vector<NeuronaLIF> capa3(1);
+#line 7 "C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/directives.tcl"
+#pragma HLSDIRECTIVE TOP name=simulate_SNN
+# 3 "src/snn.cpp"
+
+    NeuronaLIF capa1[2];
+    NeuronaLIF capa2[3];
+    NeuronaLIF capa3[1];
 
 
     double corrientesEntrada[2];
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(0.0, 1.0);
+    VITIS_LOOP_10_1: for (int j = 0; j < 2; j++){
+        corrientesEntrada[j]=2.0;
+    }
 # 23 "src/snn.cpp"
-    VITIS_LOOP_23_1: for (int i=0; i<10; i++){
+    VITIS_LOOP_23_2: for (int i=0; i<10; i++){
         std::cout << "Corrientes de entrada " << i+1 << ":" << std::endl;
-        VITIS_LOOP_25_2: for (int j = 0; j < 2; j++) {
-            double randomValue = dis(gen);
-            corrientesEntrada[j] = (randomValue <= 0.5) ? 0.0 : 2.0;
+        VITIS_LOOP_25_3: for (int j = 0; j < 2; j++) {
+
+
             std::cout << "Entrada neurona " << j+1 << ": " << corrientesEntrada[j] << std::endl;
         }
 

@@ -3,7 +3,7 @@
 #include <random>
 #include <vector>
 
-#include "../includes/defines.h"
+#include "../headers/defines.h"
 
 enum class EstadoNeurona {
     RECIBIENDO,

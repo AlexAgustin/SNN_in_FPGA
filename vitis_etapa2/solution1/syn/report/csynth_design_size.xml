@@ -1,152 +1,59 @@
 <design_size title="Design Size Report">
-    <item name="C-Synthesis has not completed!">
-        <item name="Array/Struct"/>
-        <item name="Performance"/>
-        <item name="HW Transforms"/>
-    </item>
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 6508, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 1092, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll, 1764, user unroll pragmas are applied</column>
-            <column name="">(2) simplification, 1397, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,   936, user inline pragmas are applied</column>
-            <column name="">(4) simplification,   654, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,   952, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,   793, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,   541, user inline pragmas are applied</column>
+            <column name="">(4) simplification,   523, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
-            <column name="Array/Struct">, pending, After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition,   520, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,   520, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,   520, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,   520, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,   511, array access pattern optmizations</column>
+            <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,   505, loop and instruction simplification</column>
+            <column name="">(2) parallelization,   477, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,   477, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,   477, simplification of design after performance transformations</column>
+            <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,   477, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,   471, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
-            <header size="4" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline"/>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="simulate_SNN" col1="snn.cpp:3" col2="6508" col3="654">
-                    <row id="41" col0="allocator" col1="allocator.h:131" col2="12" col2_disp="  12 (3 calls)" col3="">
-                        <row id="62" col0="new_allocator" col1="new_allocator.h:79" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                    </row>
-                    <row id="44" col0="vector" col1="stl_vector.h:415" col2="348" col2_disp=" 348 (3 calls)" col3="">
-                        <row id="6" col0="_Vector_base" col1="stl_vector.h:258" col2="174" col2_disp=" 174 (3 calls)" col3="">
-                            <row id="5" col0="_Vector_impl" col1="stl_vector.h:99" col2="42" col2_disp="  42 (3 calls)" col3="">
-                                <row id="14" col0="allocator" col1="allocator.h:133" col2="15" col2_disp="  15 (3 calls)" col3="">
-                                    <row id="65" col0="new_allocator" col1="new_allocator.h:81" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                                </row>
-                            </row>
-                            <row id="68" col0="_M_create_storage" col1="stl_vector.h:309" col2="120" col2_disp=" 120 (3 calls)" col3="">
-                                <row id="23" col0="_M_allocate" col1="stl_vector.h:293" col2="66" col2_disp="  66 (3 calls)" col3="">
-                                    <row id="38" col0="allocate" col1="alloc_traits.h:435" col2="39" col2_disp="  39 (3 calls)" col3="">
-                                        <row id="16" col0="allocate" col1="new_allocator.h:99" col2="30" col2_disp="  30 (3 calls)" col3="">
-                                            <row id="42" col0="max_size" col1="new_allocator.h:129" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                                        </row>
-                                    </row>
-                                </row>
-                            </row>
+                <row id="0" col0="simulate_SNN" col1="snn.cpp:3" col2="1092" col3="523" col4="511" col5="477" col6="471">
+                    <row id="6" col0="NeuronaLIF" col1="neuron.h:26" col2="54" col2_disp="  54 (3 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="3" col0="simulate" col1="neuron.cpp:17" col2="768" col2_disp=" 768 (6 calls)" col3="318" col3_disp="318 (6 calls)" col4="304" col4_disp="304 (6 calls)" col5="274" col5_disp="274 (6 calls)" col6="302" col6_disp="302 (6 calls)">
+                        <row id="15" col0="getEstado" col1="neuron.h:41" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="getPotencialMembrana" col1="neuron.h:29" col2="54" col2_disp="  54 (18 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="16" col0="getDecayFactor" col1="neuron.h:53" col2="36" col2_disp="  36 (12 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="17" col0="getPotencialReposo" col1="neuron.h:45" col2="36" col2_disp="  36 (12 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="8" col0="setPotencialMembrana" col1="neuron.h:65" col2="36" col2_disp="  36 (12 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="14" col0="integrarEntradas" col1="neuron.cpp:4" col2="138" col2_disp=" 138 (6 calls)" col3="" col4="" col5="" col6="">
+                            <row id="1" col0="incPotencialMembrana" col1="neuron.h:33" col2="30" col2_disp="  30 (6 calls)" col3="" col4="" col5="" col6=""/>
                         </row>
-                        <row id="67" col0="_M_default_initialize" col1="stl_vector.h:1487" col2="162" col2_disp=" 162 (3 calls)" col3="">
-                            <row id="26" col0="_M_get_Tp_allocator" col1="stl_vector.h:237" col2="9" col2_disp="   9 (3 calls)" col3=""/>
-                            <row id="27" col0="__uninitialized_default_n_a&lt;NeuronaLIF *, unsigned long, NeuronaLIF&gt;" col1="stl_uninitialized.h:643" col2="117" col2_disp=" 117 (3 calls)" col3="">
-                                <row id="63" col0="__uninitialized_default_n&lt;NeuronaLIF *, unsigned long&gt;" col1="stl_uninitialized.h:574" col2="111" col2_disp=" 111 (3 calls)" col3="">
-                                    <row id="43" col0="__uninit_default_n&lt;NeuronaLIF *, unsigned long&gt;" col1="stl_uninitialized.h:521" col2="105" col2_disp=" 105 (3 calls)" col3="">
-                                        <row id="59" col0="__addressof&lt;NeuronaLIF&gt;" col1="move.h:47" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                                        <row id="31" col0="_Construct&lt;NeuronaLIF&gt;" col1="stl_construct.h:74" col2="66" col2_disp="  66 (3 calls)" col3="">
-                                            <row id="11" col0="NeuronaLIF" col1="neuron.h:26" col2="54" col2_disp="  54 (3 calls)" col3=""/>
-                                        </row>
-                                    </row>
-                                </row>
-                            </row>
-                        </row>
+                        <row id="9" col0="getThr" col1="neuron.h:49" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="setPotencialSalida" col1="neuron.h:73" col2="36" col2_disp="  36 (12 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="7" col0="setEstado" col1="neuron.h:69" col2="36" col2_disp="  36 (12 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="11" col0="getPotencialSalida" col1="neuron.h:37" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="getConteoRefractario" col1="neuron.h:61" col2="24" col2_disp="  24 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="12" col0="getCooldown" col1="neuron.h:57" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="2" col0="incConteoRefractario" col1="neuron.h:77" col2="30" col2_disp="  30 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="13" col0="rstConteoRefractario" col1="neuron.h:81" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
                     </row>
-                    <row id="57" col0="~allocator" col1="allocator.h:139" col2="12" col2_disp="  12 (3 calls)" col3="">
-                        <row id="18" col0="~new_allocator" col1="new_allocator.h:86" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                    </row>
-                    <row id="79" col0="random_device" col1="random.h:1582" col2="2" col3=""/>
-                    <row id="10" col0="operator()" col1="random.h:1608" col2="2" col3=""/>
-                    <row id="60" col0="mersenne_twister_engine" col1="random.h:488" col2="47" col3="">
-                        <row id="58" col0="seed" col1="random.tcc:326" col2="45" col3="">
-                            <row id="35" col0="__mod&lt;unsigned int, 0, 1, 0&gt;" col1="random.h:146" col2="10" col2_disp="  10 (2 calls)" col3="">
-                                <row id="2" col0="__calc" col1="random.h:135" col2="6" col2_disp="   6 (2 calls)" col3=""/>
-                            </row>
-                            <row id="48" col0="__mod&lt;unsigned int, 624, 1, 0&gt;" col1="random.h:146" col2="6" col3="">
-                                <row id="2" col0="__calc" col1="random.h:135" col2="4" col3=""/>
-                            </row>
-                        </row>
-                    </row>
-                    <row id="9" col0="uniform_real_distribution" col1="random.h:1753" col2="8" col3="">
-                        <row id="30" col0="param_type" col1="random.h:1717" col2="5" col3=""/>
-                    </row>
-                    <row id="20" col0="operator()&lt;std::mersenne_twister_engine&lt;unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253&gt; &gt;" col1="random.h:1813" col2="4696" col3="">
-                        <row id="66" col0="operator()&lt;std::mersenne_twister_engine&lt;unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253&gt; &gt;" col1="random.h:1818" col2="4693" col3="">
-                            <row id="52" col0="_Adaptor" col1="random.h:160" col2="3" col3=""/>
-                            <row id="71" col0="operator()" col1="random.h:177" col2="4667" col3="">
-                                <row id="13" col0="generate_canonical&lt;double, 53, std::mersenne_twister_engine&lt;unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253&gt; &gt;" col1="random.tcc:3315" col2="4663" col3="">
-                                    <row id="25" col0="max" col1="random.h:522" col2="1" col3=""/>
-                                    <row id="19" col0="min" col1="random.h:515" col2="2" col2_disp="   2 (2 calls)" col3=""/>
-                                    <row id="39" col0="operator()" col1="random.tcc:452" col2="113" col3="">
-                                        <row id="33" col0="_M_gen_rand" col1="random.tcc:396" col2="89" col3=""/>
-                                    </row>
-                                    <row id="28" col0="nextafter" col1="nextafterdouble.cpp:6" col2="2542" col3="">
-                                        <row id="70" col0="generic_nextafter&lt;double&gt;" col1="hls_nextafter.h:17" col2="2540" col3="">
-                                            <row id="55" col0="fp_struct" col1="x_hls_utils.h:456" col2="624" col2_disp=" 624 (2 calls)" col3=""/>
-                                            <row id="37" col0="data" col1="x_hls_utils.h:475" col2="548" col2_disp=" 548 (2 calls)" col3=""/>
-                                            <row id="76" col0="fp_struct" col1="x_hls_utils.h:454" col2="4" col3=""/>
-                                            <row id="80" col0="to_ieee" col1="x_hls_utils.h:509" col2="294" col3="">
-                                                <row id="22" col0="to_double" col1="x_hls_utils.h:494" col2="292" col3="">
-                                                    <row id="37" col0="data" col1="x_hls_utils.h:475" col2="274" col3=""/>
-                                                </row>
-                                            </row>
-                                        </row>
-                                    </row>
-                                </row>
-                            </row>
-                            <row id="69" col0="b" col1="random.h:1729" col2="3" col3=""/>
-                            <row id="64" col0="a" col1="random.h:1725" col2="6" col2_disp="   6 (2 calls)" col3=""/>
-                        </row>
-                    </row>
-                    <row id="32" col0="operator[]" col1="stl_vector.h:930" col2="138" col2_disp=" 138 (23 calls)" col3=""/>
-                    <row id="73" col0="simulate" col1="neuron.cpp:17" col2="768" col2_disp=" 768 (6 calls)" col3="372" col3_disp="372 (6 calls)">
-                        <row id="78" col0="getEstado" col1="neuron.h:41" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                        <row id="49" col0="getPotencialMembrana" col1="neuron.h:29" col2="54" col2_disp="  54 (18 calls)" col3=""/>
-                        <row id="53" col0="getDecayFactor" col1="neuron.h:53" col2="36" col2_disp="  36 (12 calls)" col3=""/>
-                        <row id="46" col0="getPotencialReposo" col1="neuron.h:45" col2="36" col2_disp="  36 (12 calls)" col3=""/>
-                        <row id="7" col0="setPotencialMembrana" col1="neuron.h:65" col2="36" col2_disp="  36 (12 calls)" col3=""/>
-                        <row id="12" col0="integrarEntradas" col1="neuron.cpp:4" col2="138" col2_disp=" 138 (6 calls)" col3="">
-                            <row id="50" col0="incPotencialMembrana" col1="neuron.h:33" col2="30" col2_disp="  30 (6 calls)" col3=""/>
-                        </row>
-                        <row id="36" col0="getThr" col1="neuron.h:49" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                        <row id="51" col0="setPotencialSalida" col1="neuron.h:73" col2="36" col2_disp="  36 (12 calls)" col3=""/>
-                        <row id="75" col0="setEstado" col1="neuron.h:69" col2="36" col2_disp="  36 (12 calls)" col3=""/>
-                        <row id="8" col0="getPotencialSalida" col1="neuron.h:37" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                        <row id="21" col0="getConteoRefractario" col1="neuron.h:61" col2="24" col2_disp="  24 (6 calls)" col3=""/>
-                        <row id="17" col0="getCooldown" col1="neuron.h:57" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                        <row id="34" col0="incConteoRefractario" col1="neuron.h:77" col2="30" col2_disp="  30 (6 calls)" col3=""/>
-                        <row id="72" col0="rstConteoRefractario" col1="neuron.h:81" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                    </row>
-                    <row id="49" col0="getPotencialMembrana" col1="neuron.h:29" col2="18" col2_disp="  18 (6 calls)" col3=""/>
-                    <row id="8" col0="getPotencialSalida" col1="neuron.h:37" col2="33" col2_disp="  33 (11 calls)" col3=""/>
-                    <row id="3" col0="~vector" col1="stl_vector.h:565" col2="177" col2_disp=" 177 (3 calls)" col3="">
-                        <row id="26" col0="_M_get_Tp_allocator" col1="stl_vector.h:237" col2="9" col2_disp="   9 (3 calls)" col3=""/>
-                        <row id="29" col0="_Destroy&lt;NeuronaLIF *, NeuronaLIF&gt;" col1="stl_construct.h:203" col2="15" col2_disp="  15 (3 calls)" col3="">
-                            <row id="61" col0="_Destroy&lt;NeuronaLIF *&gt;" col1="stl_construct.h:127" col2="9" col2_disp="   9 (3 calls)" col3="">
-                                <row id="74" col0="__destroy&lt;NeuronaLIF *&gt;" col1="stl_construct.h:117" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                            </row>
-                        </row>
-                        <row id="4" col0="~_Vector_base" col1="stl_vector.h:283" col2="111" col2_disp=" 111 (3 calls)" col3="">
-                            <row id="77" col0="_M_deallocate" col1="stl_vector.h:300" col2="39" col2_disp="  39 (3 calls)" col3="">
-                                <row id="15" col0="deallocate" col1="alloc_traits.h:461" col2="18" col2_disp="  18 (3 calls)" col3="">
-                                    <row id="1" col0="deallocate" col1="new_allocator.h:116" col2="9" col2_disp="   9 (3 calls)" col3=""/>
-                                </row>
-                            </row>
-                            <row id="24" col0="~_Vector_impl" col1="stl_vector.h:88" col2="21" col2_disp="  21 (3 calls)" col3="">
-                                <row id="57" col0="~allocator" col1="allocator.h:139" col2="12" col2_disp="  12 (3 calls)" col3="">
-                                    <row id="18" col0="~new_allocator" col1="new_allocator.h:86" col2="3" col2_disp="   3 (3 calls)" col3=""/>
-                                </row>
-                            </row>
-                        </row>
-                    </row>
-                    <row id="13" col0="generate_canonical&lt;double, 53, std::mersenne_twister_engine&lt;unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253&gt; &gt;" col1="random.tcc:3315" col2="" col3="104"/>
+                    <row id="5" col0="getPotencialMembrana" col1="neuron.h:29" col2="18" col2_disp="  18 (6 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="11" col0="getPotencialSalida" col1="neuron.h:37" col2="33" col2_disp="  33 (11 calls)" col3="" col4="" col5="" col6=""/>
                 </row>
             </rows>
             <notes/>

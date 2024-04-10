@@ -2,21 +2,30 @@
 MainSourceFile:  'C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/.autopilot/db/snn.pp.0.cpp'
 Diagnostics:     
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_23_1:  '
+    Message:         'Added loop label VITIS_LOOP_10_1:  '
+    FileOffset:      10
+    FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\snn.cpp'
+    Replacements:    
+      - FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\vitis_etapa2\solution1\.autopilot\db\snn.pp.0.cpp'
+        Offset:          1254932
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_10_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_23_2:  '
     FileOffset:      23
     FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\snn.cpp'
     Replacements:    
       - FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\vitis_etapa2\solution1\.autopilot\db\snn.pp.0.cpp'
-        Offset:          1254665
+        Offset:          1255024
         Length:          0
-        ReplacementText: 'VITIS_LOOP_23_1: '
+        ReplacementText: 'VITIS_LOOP_23_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_25_2:  '
+    Message:         'Added loop label VITIS_LOOP_25_3:  '
     FileOffset:      25
     FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\snn.cpp'
     Replacements:    
       - FilePath:        'C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\vitis_etapa2\solution1\.autopilot\db\snn.pp.0.cpp'
-        Offset:          1254773
+        Offset:          1255132
         Length:          0
-        ReplacementText: 'VITIS_LOOP_25_2: '
+        ReplacementText: 'VITIS_LOOP_25_3: '
 ...

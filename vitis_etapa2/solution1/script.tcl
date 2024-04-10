@@ -15,7 +15,7 @@ add_files -tb src/first_network_tb.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xczu7ev-ffvf1517-2LV-e}
 create_clock -period 10 -name default
-#source "./vitis_etapa2/solution1/directives.tcl"
+source "./vitis_etapa2/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design

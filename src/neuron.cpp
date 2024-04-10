@@ -1,5 +1,4 @@
-#include "../includes/neuron.h"
-#include "../includes/defines.h"
+#include "../headers/neuron.h"
 
 void integrarEntradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
     std::cout << "Integrando entradas..." << std::endl;

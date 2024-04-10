@@ -2,19 +2,7 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog>
-        <logs message="ERROR: [HLS 200-1715] Encountered problem during source synthesis" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.671+0200"/>
-        <logs message="ERROR: [HLS 214-135] Syn check fail!" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.662+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function operator delete (C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\ext/new_allocator.h:125:2)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.639+0200"/>
-        <logs message="ERROR: [HLS 214-195] in function 'simulate_SNN()': Unsupported std function std::generate_canonical&lt;double, 53ul, std::mersenne_twister_engine&lt;unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> > (C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\bits/random.h:179:11)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.609+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::random_device::_M_getval_pretr1 (C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\bits/random.h:1613:20)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.609+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::allocator&lt;char>::~allocator (src/snn.cpp:10:24)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.592+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::__cxx11::basic_string&lt;char, std::char_traits&lt;char>, std::allocator&lt;char> >::~basic_string (src/snn.cpp:10:24)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.578+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::random_device::_M_init_pretr1 (C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\bits/random.h:1583:7)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.560+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::__cxx11::basic_string&lt;char, std::char_traits&lt;char>, std::allocator&lt;char> >::basic_string (src/snn.cpp:10:24)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.545+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function std::allocator&lt;char>::allocator (src/snn.cpp:10:24)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.535+0200"/>
-        <logs message="ERROR: [HLS 214-194] in function 'simulate_SNN()': Undefined function operator new (C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\ext/new_allocator.h:111:27)" projectName="vitis_etapa2" solutionName="solution1" date="2024-04-10T11:39:21.528+0200"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

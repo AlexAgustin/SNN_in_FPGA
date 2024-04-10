@@ -5,6 +5,11 @@
                 <option name="name" value="simulate_SNN"/>
             </pragma>
         </directive>
+        <directive functionName="simulate_SNN" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="simulate_SNN"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

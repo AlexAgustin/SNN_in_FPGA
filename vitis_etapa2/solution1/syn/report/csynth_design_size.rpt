@@ -2,114 +2,61 @@
 == Design Size Report
 ================================================================
 
-* C-Synthesis has not completed!
-
 * Total Instructions per Compilation Phase
-+---------------+--------------------+--------------+----------------------------------------------------------------------------------+
-| Phase         | Step               | Instructions | Description                                                                      |
-+---------------+--------------------+--------------+----------------------------------------------------------------------------------+
-| Compile/Link  |                    | 6,508        | After all functions are compiled and linked into a single design                 |
-|               |                    |              |                                                                                  |
-| Unroll/Inline |                    |              | After user unroll and inline pragmas are applied                                 |
-|               | (1) unroll         | 1,764        | user unroll pragmas are applied                                                  |
-|               | (2) simplification | 1,397        | simplification of applied user unroll pragmas                                    |
-|               | (3) inline         |   936        | user inline pragmas are applied                                                  |
-|               | (4) simplification |   654        | simplification of applied user inline pragmas                                    |
-|               |                    |              |                                                                                  |
-| Array/Struct  |                    | pending      | After user array partition and struct aggregate/disaggregate pragmas are applied |
-| Performance   |                    |              | After transformations are applied to meet performance pragma targets             |
-| HW Transforms |                    |              | After hardware transfomations                                                    |
-+---------------+--------------------+--------------+----------------------------------------------------------------------------------+
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             | 1,092        | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  |   952        | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |   793        | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |   541        | user inline pragmas are applied                                                        |
+|               | (4) simplification          |   523        | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         |   520        | user array partition pragmas are applied                                               |
+|               | (2) simplification          |   520        | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |   520        | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |   520        | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |   511        | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     |   505        | loop and instruction simplification                                                    |
+|               | (2) parallelization         |   477        | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |   477        | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |   477        | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                |   477        | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |   471        | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
-+----------------------------------------+-------------------------+-----------------+---------------+
-| Function                               | Location                | Compile/Link    | Unroll/Inline |
-+----------------------------------------+-------------------------+-----------------+---------------+
-| + simulate_SNN                         | snn.cpp:3               | 6,508           | 654           |
-|  + allocator                           | allocator.h:131         |   12 (3 calls)  |               |
-|     new_allocator                      | new_allocator.h:79      |    3 (3 calls)  |               |
-|  + vector                              | stl_vector.h:415        |  348 (3 calls)  |               |
-|   + _Vector_base                       | stl_vector.h:258        |  174 (3 calls)  |               |
-|    + _Vector_impl                      | stl_vector.h:99         |   42 (3 calls)  |               |
-|     + allocator                        | allocator.h:133         |   15 (3 calls)  |               |
-|        new_allocator                   | new_allocator.h:81      |    3 (3 calls)  |               |
-|    + _M_create_storage                 | stl_vector.h:309        |  120 (3 calls)  |               |
-|     + _M_allocate                      | stl_vector.h:293        |   66 (3 calls)  |               |
-|      + allocate                        | alloc_traits.h:435      |   39 (3 calls)  |               |
-|       + allocate                       | new_allocator.h:99      |   30 (3 calls)  |               |
-|          max_size                      | new_allocator.h:129     |    3 (3 calls)  |               |
-|   + _M_default_initialize              | stl_vector.h:1487       |  162 (3 calls)  |               |
-|      _M_get_Tp_allocator               | stl_vector.h:237        |    9 (3 calls)  |               |
-|    + __uninitialized_default_n_a<...   | stl_uninitialized.h:643 |  117 (3 calls)  |               |
-|     + __uninitialized_default_n<Ne...  | stl_uninitialized.h:574 |  111 (3 calls)  |               |
-|      + __uninit_default_n<NeuronaLI... | stl_uninitialized.h:521 |  105 (3 calls)  |               |
-|         __addressof<NeuronaLIF>        | move.h:47               |    3 (3 calls)  |               |
-|       + _Construct<NeuronaLIF>         | stl_construct.h:74      |   66 (3 calls)  |               |
-|          NeuronaLIF                    | neuron.h:26             |   54 (3 calls)  |               |
-|  + ~allocator                          | allocator.h:139         |   12 (3 calls)  |               |
-|     ~new_allocator                     | new_allocator.h:86      |    3 (3 calls)  |               |
-|    random_device                       | random.h:1582           |    2            |               |
-|    operator()                          | random.h:1608           |    2            |               |
-|  + mersenne_twister_engine             | random.h:488            |   47            |               |
-|   + seed                               | random.tcc:326          |   45            |               |
-|    + __mod<unsigned int, 0, 1, 0>...   | random.h:146            |   10 (2 calls)  |               |
-|       __calc                           | random.h:135            |    6 (2 calls)  |               |
-|    + __mod<unsigned int, 624, 1, ...   | random.h:146            |    6            |               |
-|       __calc                           | random.h:135            |    4            |               |
-|  + uniform_real_distribution           | random.h:1753           |    8            |               |
-|     param_type                         | random.h:1717           |    5            |               |
-|  + operator()<std::mersenne_twi...     | random.h:1813           | 4,696           |               |
-|   + operator()<std::mersenne_twi...    | random.h:1818           | 4,693           |               |
-|      _Adaptor                          | random.h:160            |    3            |               |
-|    + operator()                        | random.h:177            | 4,667           |               |
-|     + generate_canonical<double, 5...  | random.tcc:3315         | 4,663           |               |
-|        max                             | random.h:522            |    1            |               |
-|        min                             | random.h:515            |    2 (2 calls)  |               |
-|      + operator()                      | random.tcc:452          |  113            |               |
-|         _M_gen_rand                    | random.tcc:396          |   89            |               |
-|      + nextafter                       | nextafterdouble.cpp:6   | 2,542           |               |
-|       + generic_nextafter<double>      | hls_nextafter.h:17      | 2,540           |               |
-|          fp_struct                     | x_hls_utils.h:456       |  624 (2 calls)  |               |
-|          data                          | x_hls_utils.h:475       |  548 (2 calls)  |               |
-|          fp_struct                     | x_hls_utils.h:454       |    4            |               |
-|        + to_ieee                       | x_hls_utils.h:509       |  294            |               |
-|         + to_double                    | x_hls_utils.h:494       |  292            |               |
-|            data                        | x_hls_utils.h:475       |  274            |               |
-|      b                                 | random.h:1729           |    3            |               |
-|      a                                 | random.h:1725           |    6 (2 calls)  |               |
-|    operator[]                          | stl_vector.h:930        |  138 (23 calls) |               |
-|  + simulate                            | neuron.cpp:17           |  768 (6 calls)  | 372 (6 calls) |
-|     getEstado                          | neuron.h:41             |   18 (6 calls)  |               |
-|     getPotencialMembrana               | neuron.h:29             |   54 (18 calls) |               |
-|     getDecayFactor                     | neuron.h:53             |   36 (12 calls) |               |
-|     getPotencialReposo                 | neuron.h:45             |   36 (12 calls) |               |
-|     setPotencialMembrana               | neuron.h:65             |   36 (12 calls) |               |
-|   + integrarEntradas                   | neuron.cpp:4            |  138 (6 calls)  |               |
-|      incPotencialMembrana              | neuron.h:33             |   30 (6 calls)  |               |
-|     getThr                             | neuron.h:49             |   18 (6 calls)  |               |
-|     setPotencialSalida                 | neuron.h:73             |   36 (12 calls) |               |
-|     setEstado                          | neuron.h:69             |   36 (12 calls) |               |
-|     getPotencialSalida                 | neuron.h:37             |   18 (6 calls)  |               |
-|     getConteoRefractario               | neuron.h:61             |   24 (6 calls)  |               |
-|     getCooldown                        | neuron.h:57             |   18 (6 calls)  |               |
-|     incConteoRefractario               | neuron.h:77             |   30 (6 calls)  |               |
-|     rstConteoRefractario               | neuron.h:81             |   18 (6 calls)  |               |
-|    getPotencialMembrana                | neuron.h:29             |   18 (6 calls)  |               |
-|    getPotencialSalida                  | neuron.h:37             |   33 (11 calls) |               |
-|  + ~vector                             | stl_vector.h:565        |  177 (3 calls)  |               |
-|     _M_get_Tp_allocator                | stl_vector.h:237        |    9 (3 calls)  |               |
-|   + _Destroy<NeuronaLIF *, Neuro...    | stl_construct.h:203     |   15 (3 calls)  |               |
-|    + _Destroy<NeuronaLIF *>            | stl_construct.h:127     |    9 (3 calls)  |               |
-|       __destroy<NeuronaLIF *>          | stl_construct.h:117     |    3 (3 calls)  |               |
-|   + ~_Vector_base                      | stl_vector.h:283        |  111 (3 calls)  |               |
-|    + _M_deallocate                     | stl_vector.h:300        |   39 (3 calls)  |               |
-|     + deallocate                       | alloc_traits.h:461      |   18 (3 calls)  |               |
-|        deallocate                      | new_allocator.h:116     |    9 (3 calls)  |               |
-|    + ~_Vector_impl                     | stl_vector.h:88         |   21 (3 calls)  |               |
-|     + ~allocator                       | allocator.h:139         |   12 (3 calls)  |               |
-|        ~new_allocator                  | new_allocator.h:86      |    3 (3 calls)  |               |
-|    generate_canonical<double, 5...     | random.tcc:3315         |                 | 104           |
-+----------------------------------------+-------------------------+-----------------+---------------+
++---------------------------+---------------+-----------------+---------------+---------------+---------------+---------------+
+| Function                  | Location      | Compile/Link    | Unroll/Inline | Array/Struct  | Performance   | HW Transforms |
++---------------------------+---------------+-----------------+---------------+---------------+---------------+---------------+
+| + simulate_SNN            | snn.cpp:3     | 1,092           | 523           | 511           | 477           | 471           |
+|    NeuronaLIF             | neuron.h:26   |   54 (3 calls)  |               |               |               |               |
+|  + simulate               | neuron.cpp:17 |  768 (6 calls)  | 318 (6 calls) | 304 (6 calls) | 274 (6 calls) | 302 (6 calls) |
+|     getEstado             | neuron.h:41   |   18 (6 calls)  |               |               |               |               |
+|     getPotencialMembrana  | neuron.h:29   |   54 (18 calls) |               |               |               |               |
+|     getDecayFactor        | neuron.h:53   |   36 (12 calls) |               |               |               |               |
+|     getPotencialReposo    | neuron.h:45   |   36 (12 calls) |               |               |               |               |
+|     setPotencialMembrana  | neuron.h:65   |   36 (12 calls) |               |               |               |               |
+|   + integrarEntradas      | neuron.cpp:4  |  138 (6 calls)  |               |               |               |               |
+|      incPotencialMembrana | neuron.h:33   |   30 (6 calls)  |               |               |               |               |
+|     getThr                | neuron.h:49   |   18 (6 calls)  |               |               |               |               |
+|     setPotencialSalida    | neuron.h:73   |   36 (12 calls) |               |               |               |               |
+|     setEstado             | neuron.h:69   |   36 (12 calls) |               |               |               |               |
+|     getPotencialSalida    | neuron.h:37   |   18 (6 calls)  |               |               |               |               |
+|     getConteoRefractario  | neuron.h:61   |   24 (6 calls)  |               |               |               |               |
+|     getCooldown           | neuron.h:57   |   18 (6 calls)  |               |               |               |               |
+|     incConteoRefractario  | neuron.h:77   |   30 (6 calls)  |               |               |               |               |
+|     rstConteoRefractario  | neuron.h:81   |   18 (6 calls)  |               |               |               |               |
+|    getPotencialMembrana   | neuron.h:29   |   18 (6 calls)  |               |               |               |               |
+|    getPotencialSalida     | neuron.h:37   |   33 (11 calls) |               |               |               |               |
++---------------------------+---------------+-----------------+---------------+---------------+---------------+---------------+
 
 * Design Size Message Settings
 +---------------------------------------------+--------+------------------------------------------------------------------+
