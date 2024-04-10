@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="defines.h" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\includes\defines.h"/>
+    <originFiles name="neuron.cpp" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\neuron.cpp"/>
+    <originFiles name="neuron.h" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\includes\neuron.h"/>
+    <originFiles name="snn.cpp" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\snn.cpp"/>
+    <originFiles name="snn.h" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\includes\snn.h"/>
+  </source>
+  <testbench>
+    <originFiles name="first_network_tb.cpp" path="C:\Users\alexm\Documents\Cuarto\TFG\SNN_in_FPGA\src\first_network_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

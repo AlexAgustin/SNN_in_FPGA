@@ -1,0 +1,47 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "1 2 2 2 2 2 2",
+    "file": "snn.cpp",
+    "fileloc": 3,
+    "instructions": 178,
+    "loads": {
+      "L": 6
+    },
+    "name": "simulate_SNN",
+    "stores": {
+      "L": 33
+    },
+    "total_instructions": 654
+  },
+  "1": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "random.tcc",
+    "fileloc": 3315,
+    "instructions": 104,
+    "loads": {
+      "L": 12
+    },
+    "name": "generate_canonical<double, 53, std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> >",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 104
+  },
+  "2": {
+    "basicblocks": 17,
+    "calls": "",
+    "file": "neuron.cpp",
+    "fileloc": 17,
+    "instructions": 62,
+    "loads": {
+      "L": 9
+    },
+    "name": "simulate",
+    "stores": {
+      "L": 9
+    },
+    "total_instructions": 62
+  }
+}

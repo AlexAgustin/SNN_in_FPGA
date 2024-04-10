@@ -1,7 +1,7 @@
 #include "../includes/snn.h"
 
 int main() {
-    simulate_SNN();
+    int error = simulate_SNN();
 
-    return 0;
+    return error;
 }

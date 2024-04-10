@@ -1,0 +1,23 @@
+<dict>
+  <key>main-file</key>
+  <string>C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/.autopilot/db/snn.pp.0.cpp</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/csynth.tcl</string>
+      <key>line</key>
+      <integer>19</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=simulate_SNN_XLX_SEP_ PragmaOptions=name=simulate_SNN_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+  </array>
+</dict>

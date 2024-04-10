@@ -1,0 +1,914 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "5 52 64 5 52 64 5 52 64 84 2 67 18 3 41 79 41 79 41 57 41 17 41 57 41 17 41 17 41 17 41 79 41 79 41 79 41 57 41 17 41 57 41 17 41 57 41 17 41 17 41 17 41 17 41 79 41 57 41 17 12 12 12",
+    "file": "snn.cpp",
+    "fileloc": 3,
+    "instructions": 247,
+    "loads": {
+      "L": 1
+    },
+    "name": "simulate_SNN",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 6508
+  },
+  "1": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "stl_algobase.h",
+    "fileloc": 195,
+    "instructions": 8,
+    "loads": {
+      "L": 2
+    },
+    "name": "min<unsigned long>",
+    "total_instructions": 8
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "new_allocator.h",
+    "fileloc": 116,
+    "instructions": 3,
+    "name": "deallocate",
+    "total_instructions": 3
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 135,
+    "instructions": 4,
+    "name": "__calc",
+    "total_instructions": 4
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "35 38 13",
+    "file": "stl_vector.h",
+    "fileloc": 565,
+    "instructions": 14,
+    "loads": {
+      "L": 2
+    },
+    "name": "~vector",
+    "total_instructions": 59
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "82 33",
+    "file": "stl_vector.h",
+    "fileloc": 283,
+    "instructions": 17,
+    "loads": {
+      "L": 3
+    },
+    "name": "~_Vector_base",
+    "total_instructions": 37
+  },
+  "14": {
+    "basicblocks": 1,
+    "calls": "23",
+    "file": "stl_vector.h",
+    "fileloc": 99,
+    "instructions": 9,
+    "name": "_Vector_impl",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 14
+  },
+  "15": {
+    "basicblocks": 1,
+    "calls": "14 74",
+    "file": "stl_vector.h",
+    "fileloc": 258,
+    "instructions": 4,
+    "name": "_Vector_base",
+    "total_instructions": 58
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 65,
+    "instructions": 3,
+    "name": "setPotencialMembrana",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 37,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getPotencialSalida",
+    "total_instructions": 3
+  },
+  "18": {
+    "basicblocks": 1,
+    "calls": "39",
+    "file": "random.h",
+    "fileloc": 1753,
+    "instructions": 3,
+    "name": "uniform_real_distribution",
+    "total_instructions": 8
+  },
+  "19": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "stl_algobase.h",
+    "fileloc": 219,
+    "instructions": 8,
+    "loads": {
+      "L": 2
+    },
+    "name": "max<unsigned long>",
+    "total_instructions": 8
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 1608,
+    "instructions": 2,
+    "name": "operator()",
+    "total_instructions": 2
+  },
+  "20": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 26,
+    "instructions": 18,
+    "name": "NeuronaLIF",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 18
+  },
+  "21": {
+    "basicblocks": 7,
+    "calls": "58",
+    "file": "neuron.cpp",
+    "fileloc": 4,
+    "instructions": 18,
+    "loads": {
+      "L": 1
+    },
+    "name": "integrarEntradas",
+    "total_instructions": 23
+  },
+  "22": {
+    "basicblocks": 8,
+    "calls": "1 34 29 4 19 48 29 37",
+    "file": "random.tcc",
+    "fileloc": 3315,
+    "instructions": 65,
+    "loads": {
+      "L": 2
+    },
+    "name": "generate_canonical<double, 53, std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> >",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 4663
+  },
+  "23": {
+    "basicblocks": 1,
+    "calls": "71",
+    "file": "allocator.h",
+    "fileloc": 133,
+    "instructions": 4,
+    "name": "allocator",
+    "total_instructions": 5
+  },
+  "24": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 135,
+    "instructions": 3,
+    "name": "__calc",
+    "total_instructions": 3
+  },
+  "25": {
+    "basicblocks": 1,
+    "calls": "10",
+    "file": "alloc_traits.h",
+    "fileloc": 461,
+    "instructions": 3,
+    "name": "deallocate",
+    "total_instructions": 6
+  },
+  "26": {
+    "basicblocks": 3,
+    "calls": "50",
+    "file": "new_allocator.h",
+    "fileloc": 99,
+    "instructions": 9,
+    "name": "allocate",
+    "total_instructions": 10
+  },
+  "27": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 57,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getCooldown",
+    "total_instructions": 3
+  },
+  "28": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "new_allocator.h",
+    "fileloc": 86,
+    "instructions": 1,
+    "name": "~new_allocator",
+    "total_instructions": 1
+  },
+  "29": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 515,
+    "instructions": 1,
+    "name": "min",
+    "total_instructions": 1
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "72",
+    "file": "random.h",
+    "fileloc": 1813,
+    "instructions": 3,
+    "name": "operator()<std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> >",
+    "total_instructions": 4696
+  },
+  "30": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 61,
+    "instructions": 4,
+    "loads": {
+      "L": 1
+    },
+    "name": "getConteoRefractario",
+    "total_instructions": 4
+  },
+  "31": {
+    "basicblocks": 1,
+    "calls": "46",
+    "file": "x_hls_utils.h",
+    "fileloc": 494,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_double",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 292
+  },
+  "32": {
+    "basicblocks": 4,
+    "calls": "47",
+    "file": "stl_vector.h",
+    "fileloc": 293,
+    "instructions": 9,
+    "name": "_M_allocate",
+    "total_instructions": 22
+  },
+  "33": {
+    "basicblocks": 1,
+    "calls": "64",
+    "file": "stl_vector.h",
+    "fileloc": 88,
+    "instructions": 3,
+    "name": "~_Vector_impl",
+    "total_instructions": 7
+  },
+  "34": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 522,
+    "instructions": 1,
+    "name": "max",
+    "total_instructions": 1
+  },
+  "35": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "stl_vector.h",
+    "fileloc": 237,
+    "instructions": 3,
+    "name": "_M_get_Tp_allocator",
+    "total_instructions": 3
+  },
+  "36": {
+    "basicblocks": 1,
+    "calls": "7",
+    "file": "stl_uninitialized.h",
+    "fileloc": 643,
+    "instructions": 2,
+    "name": "__uninitialized_default_n_a<NeuronaLIF *, unsigned long, NeuronaLIF>",
+    "total_instructions": 39
+  },
+  "37": {
+    "basicblocks": 1,
+    "calls": "76",
+    "file": "nextafterdouble.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "name": "nextafter",
+    "total_instructions": 2542
+  },
+  "38": {
+    "basicblocks": 1,
+    "calls": "68",
+    "file": "stl_construct.h",
+    "fileloc": 203,
+    "instructions": 2,
+    "name": "_Destroy<NeuronaLIF *, NeuronaLIF>",
+    "total_instructions": 5
+  },
+  "39": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 1717,
+    "instructions": 5,
+    "name": "param_type",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 5
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "53",
+    "file": "lib_floatconversion.cpp",
+    "fileloc": 70,
+    "instructions": 2,
+    "name": "__hls_fptoui_double_i64",
+    "total_instructions": 1920
+  },
+  "40": {
+    "basicblocks": 1,
+    "calls": "20",
+    "file": "stl_construct.h",
+    "fileloc": 74,
+    "instructions": 4,
+    "name": "_Construct<NeuronaLIF>",
+    "total_instructions": 22
+  },
+  "41": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "stl_vector.h",
+    "fileloc": 930,
+    "instructions": 6,
+    "loads": {
+      "L": 1
+    },
+    "name": "operator[]",
+    "total_instructions": 6
+  },
+  "42": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "random.tcc",
+    "fileloc": 396,
+    "instructions": 89,
+    "loads": {
+      "L": 9
+    },
+    "name": "_M_gen_rand",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 89
+  },
+  "43": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 77,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "incConteoRefractario",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "44": {
+    "basicblocks": 1,
+    "calls": "24",
+    "file": "random.h",
+    "fileloc": 146,
+    "instructions": 2,
+    "name": "__mod<unsigned int, 0, 1, 0>",
+    "total_instructions": 5
+  },
+  "45": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 49,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getThr",
+    "total_instructions": 3
+  },
+  "46": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 475,
+    "instructions": 32,
+    "name": "data",
+    "total_instructions": 274
+  },
+  "47": {
+    "basicblocks": 1,
+    "calls": "26",
+    "file": "alloc_traits.h",
+    "fileloc": 435,
+    "instructions": 3,
+    "name": "allocate",
+    "total_instructions": 13
+  },
+  "48": {
+    "basicblocks": 3,
+    "calls": "42",
+    "file": "random.tcc",
+    "fileloc": 452,
+    "instructions": 24,
+    "loads": {
+      "L": 3
+    },
+    "name": "operator()",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 113
+  },
+  "49": {
+    "basicblocks": 15,
+    "calls": "62 55 63 63 61 61",
+    "file": "hls_case_IEEE754.h",
+    "fileloc": 65,
+    "instructions": 106,
+    "name": "generic_cast_IEEE754<unsigned long long, AP_TRN_ZERO, double>",
+    "total_instructions": 1916
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "69",
+    "file": "allocator.h",
+    "fileloc": 131,
+    "instructions": 3,
+    "name": "allocator",
+    "total_instructions": 4
+  },
+  "50": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "new_allocator.h",
+    "fileloc": 129,
+    "instructions": 1,
+    "name": "max_size",
+    "total_instructions": 1
+  },
+  "51": {
+    "basicblocks": 5,
+    "calls": "66 40",
+    "file": "stl_uninitialized.h",
+    "fileloc": 521,
+    "instructions": 12,
+    "name": "__uninit_default_n<NeuronaLIF *, unsigned long>",
+    "total_instructions": 35
+  },
+  "52": {
+    "basicblocks": 1,
+    "calls": "15 73",
+    "file": "stl_vector.h",
+    "fileloc": 415,
+    "instructions": 4,
+    "name": "vector",
+    "total_instructions": 116
+  },
+  "53": {
+    "basicblocks": 1,
+    "calls": "49",
+    "file": "hls_case_IEEE754.h",
+    "fileloc": 116,
+    "instructions": 2,
+    "name": "generic_cast_IEEE754<unsigned long long, double>",
+    "total_instructions": 1918
+  },
+  "54": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 45,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getPotencialReposo",
+    "total_instructions": 3
+  },
+  "55": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 503,
+    "instructions": 24,
+    "name": "mantissa",
+    "total_instructions": 179
+  },
+  "56": {
+    "basicblocks": 1,
+    "calls": "11",
+    "file": "random.h",
+    "fileloc": 146,
+    "instructions": 2,
+    "name": "__mod<unsigned int, 624, 1, 0>",
+    "total_instructions": 6
+  },
+  "57": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 29,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getPotencialMembrana",
+    "total_instructions": 3
+  },
+  "58": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 33,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "incPotencialMembrana",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "59": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 73,
+    "instructions": 3,
+    "name": "setPotencialSalida",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 160,
+    "instructions": 3,
+    "name": "_Adaptor",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3
+  },
+  "60": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 53,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getDecayFactor",
+    "total_instructions": 3
+  },
+  "61": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 512,
+    "instructions": 4,
+    "name": "__signbit",
+    "total_instructions": 9
+  },
+  "62": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 456,
+    "instructions": 55,
+    "loads": {
+      "L": 1
+    },
+    "name": "fp_struct",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 312
+  },
+  "63": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 485,
+    "instructions": 8,
+    "name": "expv",
+    "total_instructions": 109
+  },
+  "64": {
+    "basicblocks": 1,
+    "calls": "28",
+    "file": "allocator.h",
+    "fileloc": 139,
+    "instructions": 3,
+    "name": "~allocator",
+    "total_instructions": 4
+  },
+  "65": {
+    "basicblocks": 6,
+    "calls": "44 56 44",
+    "file": "random.tcc",
+    "fileloc": 326,
+    "instructions": 29,
+    "loads": {
+      "L": 1
+    },
+    "name": "seed",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 45
+  },
+  "66": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "move.h",
+    "fileloc": 47,
+    "instructions": 1,
+    "name": "__addressof<NeuronaLIF>",
+    "total_instructions": 1
+  },
+  "67": {
+    "basicblocks": 1,
+    "calls": "65",
+    "file": "random.h",
+    "fileloc": 488,
+    "instructions": 2,
+    "name": "mersenne_twister_engine",
+    "total_instructions": 47
+  },
+  "68": {
+    "basicblocks": 1,
+    "calls": "8",
+    "file": "stl_construct.h",
+    "fileloc": 127,
+    "instructions": 2,
+    "name": "_Destroy<NeuronaLIF *>",
+    "total_instructions": 3
+  },
+  "69": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "new_allocator.h",
+    "fileloc": 79,
+    "instructions": 1,
+    "name": "new_allocator",
+    "total_instructions": 1
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "51",
+    "file": "stl_uninitialized.h",
+    "fileloc": 574,
+    "instructions": 2,
+    "name": "__uninitialized_default_n<NeuronaLIF *, unsigned long>",
+    "total_instructions": 37
+  },
+  "70": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 1725,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "a",
+    "total_instructions": 3
+  },
+  "71": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "new_allocator.h",
+    "fileloc": 81,
+    "instructions": 1,
+    "name": "new_allocator",
+    "total_instructions": 1
+  },
+  "72": {
+    "basicblocks": 1,
+    "calls": "6 77 75 70 70",
+    "file": "random.h",
+    "fileloc": 1818,
+    "instructions": 14,
+    "name": "operator()<std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> >",
+    "total_instructions": 4693
+  },
+  "73": {
+    "basicblocks": 1,
+    "calls": "35 36",
+    "file": "stl_vector.h",
+    "fileloc": 1487,
+    "instructions": 12,
+    "loads": {
+      "L": 1
+    },
+    "name": "_M_default_initialize",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 54
+  },
+  "74": {
+    "basicblocks": 1,
+    "calls": "32",
+    "file": "stl_vector.h",
+    "fileloc": 309,
+    "instructions": 18,
+    "loads": {
+      "L": 2
+    },
+    "name": "_M_create_storage",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 40
+  },
+  "75": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 1729,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "b",
+    "total_instructions": 3
+  },
+  "76": {
+    "basicblocks": 41,
+    "calls": "62 62 46 46 81 9",
+    "file": "hls_nextafter.h",
+    "fileloc": 17,
+    "instructions": 306,
+    "loads": {
+      "L": 7
+    },
+    "name": "generic_nextafter<double>",
+    "stores": {
+      "L": 7
+    },
+    "total_instructions": 2540
+  },
+  "77": {
+    "basicblocks": 1,
+    "calls": "22",
+    "file": "random.h",
+    "fileloc": 177,
+    "instructions": 4,
+    "loads": {
+      "L": 1
+    },
+    "name": "operator()",
+    "total_instructions": 4667
+  },
+  "78": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 81,
+    "instructions": 3,
+    "name": "rstConteoRefractario",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3
+  },
+  "79": {
+    "basicblocks": 13,
+    "calls": "83 57 60 54 57 60 16 21 57 45 54 16 59 80 17 59 30 27 43 80 78",
+    "file": "neuron.cpp",
+    "fileloc": 17,
+    "instructions": 42,
+    "name": "simulate",
+    "total_instructions": 128
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "stl_construct.h",
+    "fileloc": 117,
+    "instructions": 1,
+    "name": "__destroy<NeuronaLIF *>",
+    "total_instructions": 1
+  },
+  "80": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 69,
+    "instructions": 3,
+    "name": "setEstado",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 3
+  },
+  "81": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 454,
+    "instructions": 4,
+    "name": "fp_struct",
+    "total_instructions": 4
+  },
+  "82": {
+    "basicblocks": 3,
+    "calls": "25",
+    "file": "stl_vector.h",
+    "fileloc": 300,
+    "instructions": 7,
+    "name": "_M_deallocate",
+    "total_instructions": 13
+  },
+  "83": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "neuron.h",
+    "fileloc": 41,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "getEstado",
+    "total_instructions": 3
+  },
+  "84": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "random.h",
+    "fileloc": 1582,
+    "instructions": 2,
+    "name": "random_device",
+    "total_instructions": 2
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "31",
+    "file": "x_hls_utils.h",
+    "fileloc": 509,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 294
+  }
+}

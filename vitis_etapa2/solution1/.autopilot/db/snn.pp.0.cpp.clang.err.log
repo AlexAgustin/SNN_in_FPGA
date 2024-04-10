@@ -1,0 +1,4 @@
+C:/Users/alexm/Documents/Cuarto/TFG/SNN_in_FPGA/vitis_etapa2/solution1/csynth.tcl:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=simulate_SNN_XLX_SEP_ PragmaOptions=name=simulate_SNN_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=simulate_SNN
+        ^
+1 warning generated.
