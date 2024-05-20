@@ -13,6 +13,6 @@
 #define POTEN_NO_SPIKE 0.0
 
 //-- Network Related --//
-#define NUM_NEURONAS_CAPA_1 2
+#define NUM_NEURONAS_CAPA_ENTRADA 2
 #define NUM_NEURONAS_CAPA_2 3
-#define NUM_NEURONAS_CAPA_3 1
+#define NUM_NEURONAS_CAPA_SALIDA 1
