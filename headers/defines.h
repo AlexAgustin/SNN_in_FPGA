@@ -8,6 +8,7 @@
 #define POTEN_REPOSO 0.0
 #define COOLDOWN 0.0
 #define DECAY_EXP_FACTOR 100 //Valor que se usara para calcular el factor de decay  ==>   exp(-1, DECAY_EXP_FACTOR)
+#define TRAZA_PRE_SINAPTICA 0.5
 
 #define POTEN_SPIKE 2.0
 #define POTEN_NO_SPIKE 0.0
@@ -16,3 +17,4 @@
 #define NUM_NEURONAS_CAPA_ENTRADA 2
 #define NUM_NEURONAS_CAPA_2 3
 #define NUM_NEURONAS_CAPA_SALIDA 1
+#define W_INIT 0.5

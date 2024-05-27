@@ -8,6 +8,36 @@ int simulate_SNN () {
     double corrientescapaEntrada[NUM_NEURONAS_CAPA_ENTRADA];
     double corrientesCapa2[NUM_NEURONAS_CAPA_2];
 
+    double weightsCapa1_2[NUM_NEURONAS_CAPA_ENTRADA][NUM_NEURONAS_CAPA_2];
+    double weightsCapa2_3[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_SALIDA];
+
+    for (int i=0; i<NUM_NEURONAS_CAPA_ENTRADA;i++){
+        for (int j=0; j<NUM_NEURONAS_CAPA_2;j++){
+            weightsCapa1_2[i][j]=W_INIT;
+        }
+    }
+
+    for (int i=0; i<NUM_NEURONAS_CAPA_2;i++){
+        for (int j=0; j<NUM_NEURONAS_CAPA_SALIDA;j++){
+            weightsCapa2_3[i][j]=W_INIT;
+        }
+    }
+
+    double trazasCapa1_2[NUM_NEURONAS_CAPA_ENTRADA][NUM_NEURONAS_CAPA_2];
+    double trazasCapa2_3[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_SALIDA];
+
+    for (int i=0; i<NUM_NEURONAS_CAPA_ENTRADA;i++){
+        for (int j=0; j<NUM_NEURONAS_CAPA_2;j++){
+            weightsCapa1_2[i][j]=W_INIT;
+        }
+    }
+
+    for (int i=0; i<NUM_NEURONAS_CAPA_2;i++){
+        for (int j=0; j<NUM_NEURONAS_CAPA_SALIDA;j++){
+            weightsCapa2_3[i][j]=W_INIT;
+        }
+    }
+
     // Generacion de las señales de entrada aleatorias
     double corrientesEntrada[NUM_ENTRADAS];
     for (int j = 0; j < NUM_ENTRADAS; j++){
