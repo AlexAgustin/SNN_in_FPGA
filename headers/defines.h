@@ -7,8 +7,7 @@
 #define THRESHOLD 6.0
 #define POTEN_REPOSO 0.0
 #define COOLDOWN 0.0
-#define DECAY_EXP_FACTOR 100 //Valor que se usara para calcular el factor de decay  ==>   exp(-1, DECAY_EXP_FACTOR)
-#define TRAZA_PRE_SINAPTICA 0.5
+#define DECAY_EXP_FACTOR 100 //Valor que se usara para calcular el factor de decay  ==>   exp(-1, DECAY_EXP_FACTOR)ç
 
 #define POTEN_SPIKE 2.0
 #define POTEN_NO_SPIKE 0.0
@@ -18,3 +17,13 @@
 #define NUM_NEURONAS_CAPA_2 3
 #define NUM_NEURONAS_CAPA_SALIDA 1
 #define W_INIT 0.5
+#define LEARNING_RATE 0.01
+#define A 0.5
+#define TAU_PLUS 20.0
+#define DT 0.1
+#define TRAZA_INIT 0.5
+#define RESET_TRAZA 1.0
+
+bool disparoCapa1=false;
+bool disparoCapa2=false;
+bool disparoCapa3=false;

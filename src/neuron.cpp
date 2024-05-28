@@ -1,5 +1,7 @@
 #include "../headers/neuron.h"
 
+
+
 void integrarEntradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
     std::cout << "Integrando entradas..." << std::endl;
     double aux= 0;
@@ -13,7 +15,7 @@ void integrarEntradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n)
 
 }
 
-void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
+void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* disparo) {
         switch (n->getEstado()) {
             case EstadoNeurona::RECIBIENDO:
                 // Estado en el que la neurona esta recibiendo entradas e integrandolas a su potencial
@@ -27,7 +29,7 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
                 integrarEntradas(corrientesEntrada, numEntradas, n); 
 
                 if (n->getPotencialMembrana() >= n->getThr()) {
-                    n->setPotencialMembrana(n->getPotencialReposo());    //Devuelve al potencial de reposo el potencial de la membrana
+                    *disparo=true;
                     n->setPotencialSalida(POTEN_SPIKE);  //Dispara el spike
                     std::cout << "Neurona disparada!" << std::endl;
                     n->setEstado(EstadoNeurona::ENESPERA);   //Cambio de estado
@@ -37,8 +39,11 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
 
             case EstadoNeurona::ENESPERA:
                 // Estado en el que la neurona esta en tiempo de refraccion e ignora las entradas
-                if (n->getPotencialSalida() == POTEN_SPIKE) n->setPotencialSalida(POTEN_NO_SPIKE);    //Devuelve a 0 la salida para que simule ese spike //Deberia mantenerse mas tiempo????????
-                
+                if (n->getPotencialSalida() == POTEN_SPIKE) {
+                    n->setPotencialMembrana(n->getPotencialReposo());    //Devuelve al potencial de reposo el potencial de la membrana
+                    n->setPotencialSalida(POTEN_NO_SPIKE);    //Devuelve a 0 la salida para que simule ese spike //Deberia mantenerse mas tiempo????????
+                }
+
                 if (n->getConteoRefractario() <= n->getCooldown()) { //Tiempo de espera
                     n->incConteoRefractario();
                 } else {
