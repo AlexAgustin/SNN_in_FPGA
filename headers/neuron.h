@@ -83,4 +83,5 @@ public:
     }
 };
 
-void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* disparo);
+void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* disparo, double* pesos);
+void simulate_entry(double corrienteEntrada, NeuronaLIF* n, bool* disparo);

@@ -2,12 +2,12 @@
 
 
 
-void integrarEntradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n) {
+void integrar_entradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, double* pesos) {
     std::cout << "Integrando entradas..." << std::endl;
     double aux= 0;
 
     BUCLE_AUX_INTEGRAR: for(int i=0; i<numEntradas; i++){
-        aux += corrientesEntrada[i];
+        aux += corrientesEntrada[i] * pesos[i];
         //std::cout << potencialMembrana << std::endl;
     }
 
@@ -15,7 +15,7 @@ void integrarEntradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n)
 
 }
 
-void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* disparo) {
+void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* disparo, double* pesos) {
         switch (n->getEstado()) {
             case EstadoNeurona::RECIBIENDO:
                 // Estado en el que la neurona esta recibiendo entradas e integrandolas a su potencial
@@ -26,7 +26,7 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* d
                         n->setPotencialMembrana(n->getPotencialMembrana() * n->getDecayFactor()); 
 
                 //Intregra todas las entradas en un instante de tiempo
-                integrarEntradas(corrientesEntrada, numEntradas, n); 
+                integrar_entradas(corrientesEntrada, numEntradas, n, pesos); 
 
                 if (n->getPotencialMembrana() >= n->getThr()) {
                     *disparo=true;
@@ -52,4 +52,21 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* d
                 }
                 break;
         }
+}
+
+void simulate_entry(double corrienteEntrada, NeuronaLIF* n, bool* disparo) {
+    // Estado en el que la neurona esta en tiempo de refraccion e ignora las entradas
+    if (n->getPotencialSalida() == POTEN_SPIKE) {
+        n->setPotencialMembrana(n->getPotencialReposo());    //Devuelve al potencial de reposo el potencial de la membrana
+        n->setPotencialSalida(POTEN_NO_SPIKE);    //Devuelve a 0 la salida para que simule ese spike //Deberia mantenerse mas tiempo????????
+    }
+    
+    //Intregra todas las entradas en un instante de tiempo
+    n->incPotencialMembrana(corrienteEntrada);
+
+    if (n->getPotencialMembrana() >= n->getThr()) {
+        *disparo=true;
+        n->setPotencialSalida(POTEN_SPIKE);  //Dispara el spike
+        std::cout << "Neurona disparada!" << std::endl;
+    }
 }
