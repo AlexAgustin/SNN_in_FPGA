@@ -94,7 +94,7 @@ void update_weight(double (&weights)[N], double (&traces)[N]) {
 }
 
 template <size_t N, size_t M>
-void aplicar_STDP(NeuronaLIF* capaPre, NeuronaLIF* capaPost, int winnerIndex, double (&weights)[N][M], double (&trazas)[N][M]) {
+void aplicar_STDP(int winnerIndex, double (&weights)[N][M], double (&trazas)[N][M]) {
     if (winnerIndex != -1) {
 
         //update_traces(capaPre,numPre,numPost,trazas);
@@ -233,7 +233,7 @@ int simulate_SNN () {
 
         if (disparoCapa2) {
             winnerIndex = winner_takes_all(capaSalida);
-            aplicar_STDP(capaEntrada,capaSalida,winnerIndex,weightsCapa1_2,trazasCapa1_2);
+            aplicar_STDP(winnerIndex,weightsCapa1_2,trazasCapa1_2);
         }
 
         for (int k=0;k<NUM_NEURONAS_CAPA_SALIDA;k++){

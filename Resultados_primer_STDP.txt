@@ -1,0 +1,1424 @@
+Corrientes de entrada 1:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.5
+
+1
+weights 1
+[0] [1] = 0.5
+
+
+traces 1
+[0] [0] = 0.1
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 2:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.99005
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.5
+
+1
+weights 1
+[0] [1] = 0.5
+
+
+traces 1
+[0] [0] = 0.2
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 3:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.97025
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.5
+
+1
+weights 1
+[0] [1] = 0.5
+
+
+traces 1
+[0] [0] = 0.3
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 4:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 3.94069
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.5
+
+1
+weights 1
+[0] [1] = 0.5
+
+
+traces 1
+[0] [0] = 0.4
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 5:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+Neurona disparada!
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 4.90148
+Potencial de salida de la neurona: 2
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 6:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1.1
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 7:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1.2
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 8:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.02084
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1.3
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 9:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.03153
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1.4
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 10:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 3.03216
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.510422
+
+1
+weights 1
+[0] [1] = 0.489578
+
+
+traces 1
+[0] [0] = 1.5
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 11:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+Neurona disparada!
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 4.02283
+Potencial de salida de la neurona: 2
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 12:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.1
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 13:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.2
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 14:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.04122
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.3
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 15:
+Input 1: 4
+Input 2: 0
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.07208
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.4
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 16:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.05146
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.39302
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 17:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.03105
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.38607
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 18:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.01084
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.37916
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 19:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.99083
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.37228
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 20:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.97102
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.36543
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 21:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.95141
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.35862
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 22:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.93199
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.35185
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 23:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.91277
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.34511
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 24:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.89374
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.3384
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 25:
+Input 1: 0
+Input 2: 0
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.87489
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.33172
+
+
+traces 1
+[0] [1] = 0
+
+
+Corrientes de entrada 26:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.81502
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.32508
+
+
+traces 1
+[0] [1] = 0.1
+
+
+Corrientes de entrada 27:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 3.74579
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.520609
+
+1
+weights 1
+[0] [1] = 0.479391
+
+
+traces 1
+[0] [0] = 1.31847
+
+
+traces 1
+[0] [1] = 0.2
+
+
+Corrientes de entrada 28:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+Neurona disparada!
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 4.6673
+Potencial de salida de la neurona: 2
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 1
+
+
+traces 1
+[0] [1] = 0.228677
+
+
+Corrientes de entrada 29:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.995012
+
+
+traces 1
+[0] [1] = 0.328677
+
+
+Corrientes de entrada 30:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.99005
+
+
+traces 1
+[0] [1] = 0.428677
+
+
+Corrientes de entrada 31:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0.948647
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.985112
+
+
+traces 1
+[0] [1] = 0.528677
+
+
+Corrientes de entrada 32:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.88786
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.980199
+
+
+traces 1
+[0] [1] = 0.628677
+
+
+Corrientes de entrada 33:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.81772
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.97531
+
+
+traces 1
+[0] [1] = 0.728677
+
+
+Corrientes de entrada 34:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 3.73833
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.530569
+
+1
+weights 1
+[0] [1] = 0.474324
+
+
+traces 1
+[0] [0] = 0.970446
+
+
+traces 1
+[0] [1] = 0.828677
+
+
+Corrientes de entrada 35:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+Neurona disparada!
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 4.64978
+Potencial de salida de la neurona: 2
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 1
+
+
+traces 1
+[0] [1] = 0.961756
+
+
+Corrientes de entrada 36:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 0.995012
+
+
+traces 1
+[0] [1] = 1.06176
+
+
+Corrientes de entrada 37:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 0.99005
+
+
+traces 1
+[0] [1] = 1.16176
+
+
+Corrientes de entrada 38:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 0.968926
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 0.985112
+
+
+traces 1
+[0] [1] = 1.26176
+
+
+Corrientes de entrada 39:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 1.92821
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 0.980199
+
+
+traces 1
+[0] [1] = 1.36176
+
+
+Corrientes de entrada 40:
+Input 1: 0
+Input 2: 4
+Neurona disparada!
+
+RESULTADOS CAPA ENTRADA:
+Neurona 1
+Potencial de la membrana de la neurona: 0
+Potencial de salida de la neurona: 0
+Neurona 2
+Potencial de la membrana de la neurona: 4
+Potencial de salida de la neurona: 2
+Integrando entradas...
+
+RESULTADOS CAPA salida:
+Neurona
+Potencial de la membrana de la neurona: 2.87795
+Potencial de salida de la neurona: 0
+
+1
+weights 1
+[0] [0] = 0.540306
+
+1
+weights 1
+[0] [1] = 0.484463
+
+
+traces 1
+[0] [0] = 0.97531
+
+
+traces 1
+[0] [1] = 1.46176
