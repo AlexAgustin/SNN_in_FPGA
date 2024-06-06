@@ -36,14 +36,14 @@ int winner_takes_all(NeuronaLIF (&capa)[N]) {
 }
 
 template <size_t N, size_t M>
-void update_traces(NeuronaLIF* capaPre, int numPre, int numPost, double (&trazas)[N][M]) {
-    for (int i=0; i<numPre; i++) {
+void update_traces(NeuronaLIF* capaPre, double (&trazas)[N][M]) {
+    for (int i=0; i<M; i++) {
         if (capaPre[i].getPotencialSalida() == POTEN_SPIKE) {
-            for (int j=0; j<numPost; j++) {
+            for (int j=0; j<N; j++) {
                 trazas[j][i] += ALPHA;
             }
         } else {
-            for (int j=0; j<numPost; j++) {
+            for (int j=0; j<N; j++) {
                 trazas[j][i] *= exp(-DT / TAU_PLUS);
             }
         }
@@ -183,7 +183,7 @@ int simulate_SNN () {
         outputCapaEntrada[0] = capaEntrada[0].getPotencialSalida();
         outputCapaEntrada[1] = capaEntrada[1].getPotencialSalida();
 
-        update_traces(capaEntrada, NUM_NEURONAS_CAPA_ENTRADA, NUM_NEURONAS_CAPA_SALIDA, trazasCapa1_2);
+        update_traces(capaEntrada, trazasCapa1_2);
         
         /*for (int k=0; k<NUM_NEURONAS_CAPA_ENTRADA;k++) {
             simulate(&corrientesEntrada[k], NUM_ENTRADAS/NUM_NEURONAS_CAPA_ENTRADA, &capaEntrada[k], &disparoCapa1, weightsCapaEntry[k]);

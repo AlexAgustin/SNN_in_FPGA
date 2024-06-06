@@ -24,6 +24,7 @@
 #define DT 0.1
 #define TRAZA_INIT 0.0
 //#define RESET_TRAZA 1.0
+#define NUM_DELAYS 5
 
 extern bool disparoCapa1;
 extern bool disparoCapa2;

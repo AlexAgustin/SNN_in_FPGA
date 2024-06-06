@@ -1,7 +1,6 @@
 #include "../headers/neuron.h"
 
 
-
 void integrar_entradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, double* pesos) {
     std::cout << "Integrando entradas..." << std::endl;
     double aux= 0;
