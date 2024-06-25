@@ -1,7 +1,9 @@
+//xczu2cg-sbva484-1-e
+
 #include "../headers/snn.h"
 
-int main() {
-    int error = simulate_SNN();
+main() {
+    std::cout << "0=====>" << std::endl;
+    simulate_SNN();
 
-    return error;
 }

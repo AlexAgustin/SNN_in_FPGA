@@ -112,56 +112,111 @@ bool disparoCapa1;
 bool disparoCapa2;
 //extern bool disparoCapa3;
 
-int simulate_SNN () {
+void simulate_SNN () {
+    std::cout << "1====>" << std::endl;
     NeuronaLIF capaEntrada[NUM_NEURONAS_CAPA_ENTRADA];
-    //NeuronaLIF capa2[NUM_NEURONAS_CAPA_2];
+    NeuronaLIF capa2[NUM_NEURONAS_CAPA_2];
     NeuronaLIF capaSalida[NUM_NEURONAS_CAPA_SALIDA];
 
     double outputCapaEntrada[NUM_NEURONAS_CAPA_ENTRADA];
-    //double corrientesCapa2[NUM_NEURONAS_CAPA_2];
+    double outputCapa2[NUM_NEURONAS_CAPA_2];
 
     int winnerIndex;
 
     //------------------------- Creacion e inicializacion de matrices de weights -------------------------//
 
-    double weightsCapaEntry[NUM_NEURONAS_CAPA_ENTRADA][NUM_ENTRADAS];
-    double weightsCapa1_2[NUM_NEURONAS_CAPA_SALIDA][NUM_NEURONAS_CAPA_ENTRADA];
-    //double weightsCapa2_3[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_SALIDA];
+    double weightsCapaEntrada[1][NUM_NEURONAS_CAPA_ENTRADA];
+    double weightsCapa1_2[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_ENTRADA];
+    double weightsCapa2_3[NUM_NEURONAS_CAPA_SALIDA][NUM_NEURONAS_CAPA_2];
 
-    init_matrix(weightsCapaEntry,W_INIT);
+    init_matrix(weightsCapaEntrada,1);
     init_matrix(weightsCapa1_2,W_INIT);
-    //init_matrix(weightsCapa2_3,W_INIT);
+    init_matrix(weightsCapa2_3,W_INIT);
 
     //------------------------- Creacion e nicializacion de matrices de trazas -------------------------//
 
-    double trazasCapaEntry[NUM_NEURONAS_CAPA_ENTRADA][NUM_ENTRADAS];
-    double trazasCapa1_2[NUM_NEURONAS_CAPA_SALIDA][NUM_NEURONAS_CAPA_ENTRADA];
-    //double trazasCapa2_3[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_SALIDA];
+    //double trazasCapaEntry[NUM_NEURONAS_CAPA_ENTRADA][NUM_ENTRADAS];
+    double trazasCapa1_2[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_ENTRADA];
+    double trazasCapa2_3[NUM_NEURONAS_CAPA_SALIDA][NUM_NEURONAS_CAPA_2];
 
-    init_matrix(trazasCapaEntry,TRAZA_INIT);
+    //init_matrix(trazasCapaEntry,TRAZA_INIT);
     init_matrix(trazasCapa1_2,TRAZA_INIT);
-    //init_matrix(trazasCapa2_3,TRAZA_INIT);
+    init_matrix(trazasCapa2_3,TRAZA_INIT);
 
     //------------------------- Generacion de las señales de entrada -------------------------//
 
-    double input1[NUM_ITER];
-    double input2[NUM_ITER];
+    double input[NUM_NEURONAS_CAPA_ENTRADA];
     for (int j = 0; j < NUM_ITER; j++){
-        if (j < 15) {
-            input1[j] = THRESHOLD;
-            input2[j] = POTEN_NO_SPIKE;
-        } else if (j < 25) {
-            input1[j] = POTEN_NO_SPIKE;
-            input2[j] = POTEN_NO_SPIKE;
-        } else {
-            input1[j] = POTEN_NO_SPIKE;
-            input2[j] = THRESHOLD;
+        input[j] = POTEN_NO_SPIKE;
+    }
+
+    std::string root_directory = "C:\\Users\\alexm\\Documents\\Cuarto\\TFG\\MINST_processed_100";
+
+    int event_count = 1,max = 0, mod_timestamp = 0;
+    int neurona_corresp=-1;
+
+    ProcessedEvent event;
+
+    try {
+        for (const auto& entry : fs::directory_iterator(root_directory)) {
+            if (fs::is_directory(entry.status())) {
+                std::cout << entry.path().string() << std::endl;
+
+                for (const auto& sub_entry : fs::directory_iterator(entry.path())) {
+                    if (fs::is_directory(sub_entry.status())) {
+                        std::cout << sub_entry.path().string() << std::endl;
+
+                        for (const auto& file_entry : fs::directory_iterator(sub_entry.path())) {
+                            if (fs::is_regular_file(file_entry.status())) {
+                                std::cout << file_entry.path().string() << std::endl;
+
+                                std::ifstream infile(file_entry.path().string(), std::ios::binary);
+                                if (!infile) {
+                                    break;
+                                }
+
+                                while (event_count) {
+                                    event_count = 0;
+                                    while (infile.read(reinterpret_cast<char*>(&event.timestamp), sizeof(event.timestamp))) {
+                                        infile.read(reinterpret_cast<char*>(&event.x), sizeof(event.x));
+                                        infile.read(reinterpret_cast<char*>(&event.y), sizeof(event.y));
+                                        infile.read(reinterpret_cast<char*>(&event.polarity), sizeof(event.polarity));
+
+                                        /*std::cout << "Timestamp: " << event.timestamp
+                                                << ", X: " << event.x
+                                                << ", Y: " << event.y
+                                                << ", Polarity: " << event.polarity << std::endl;*/
+
+                                        if (static_cast<int>(event.timestamp / 1000) !=mod_timestamp){
+                                            //std::cout << "Evento: " << event_count << " tiene timestamp " << event.timestamp << " y el mod es " << mod_timestamp << std::endl;
+                                            break;
+                                        }
+
+                                        neurona_corresp = event.x*event.y+event.x + 4096*event.polarity;
+                                        //std::cout << "Corresponde a la neurona: " << neurona_corresp << std::endl;
+                                        //input[neurona_corresp]=2.0;
+
+                                        event_count++;
+                                        
+                                        
+                                    }
+                                    mod_timestamp++;
+
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+    } catch (const fs::filesystem_error& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
     //------------------------- Bucle principal de iteraciones de la red -------------------------//
 
-    for (int i=0; i<NUM_ITER; i++){
+    /*for (int i=0; i<NUM_ITER; i++){
         disparoCapa1=false;
         disparoCapa2=false;
 
@@ -169,11 +224,11 @@ int simulate_SNN () {
         std::cout << "\n\nCorrientes de entrada " << i+1 << ":" << std::endl;
         std::cout << "Input 1: " << input1[i] << std::endl;
         std::cout << "Input 2: " << input2[i] << std::endl;
-        /*for (int j = 0; j < NUM_ENTRADAS; j++) {
+        for (int j = 0; j < NUM_ENTRADAS; j++) {
             //double randomValue = dis(gen); // Genera un valor aleatorio entre 0 y 1
             //corrientesEntrada[j] = (randomValue <= PROB_ENTRADA_SPIKE) ? POTEN_NO_SPIKE : POTEN_SPIKE; // Mapea el valor a 0 o 2
             
-        }*/
+        }
 
         //------------------------- Capa 1 (ENTRADA) -------------------------//
         
@@ -185,10 +240,10 @@ int simulate_SNN () {
 
         update_traces(capaEntrada, trazasCapa1_2);
         
-        /*for (int k=0; k<NUM_NEURONAS_CAPA_ENTRADA;k++) {
+        for (int k=0; k<NUM_NEURONAS_CAPA_ENTRADA;k++) {
             simulate(&corrientesEntrada[k], NUM_ENTRADAS/NUM_NEURONAS_CAPA_ENTRADA, &capaEntrada[k], &disparoCapa1, weightsCapaEntry[k]);
             outputCapaEntrada[k] = capaEntrada[k].getPotencialSalida();
-        }*/
+        }
 
         std::cout << "\nRESULTADOS CAPA ENTRADA: " << std::endl;
         for (int k=0;k<NUM_NEURONAS_CAPA_ENTRADA;k++){
@@ -201,7 +256,7 @@ int simulate_SNN () {
 
        //------------------------- Capa 2 (INTERMEDIA 1) -------------------------//
 
-        /*for (int k=0; k<NUM_NEURONAS_CAPA_2;k++) {
+        for (int k=0; k<NUM_NEURONAS_CAPA_2;k++) {
             simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capa2[k], &disparoCapa2);
             corrientesCapa2[k] = capa2[k].getPotencialSalida();
         }
@@ -216,7 +271,7 @@ int simulate_SNN () {
         if (disparoCapa2) {
             winnerIndex = winner_takes_all(capa2,NUM_NEURONAS_CAPA_2);
             aplicar_STDP(capaEntrada,NUM_NEURONAS_CAPA_ENTRADA,capa2,NUM_NEURONAS_CAPA_2,winnerIndex,weightsCapa1_2,trazasCapa1_2);
-        }*/
+        }
         
         //------------------------- Capa 3 (SALIDA) -------------------------//
 
@@ -251,7 +306,6 @@ int simulate_SNN () {
                 std::cout << "[" << k << "] [" << l << "] = " << trazasCapa1_2[k][l] << std::endl;
             }
         }
-    }
+    }*/
 
-    return 0;
 }

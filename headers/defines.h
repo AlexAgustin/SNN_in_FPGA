@@ -13,9 +13,9 @@
 #define POTEN_NO_SPIKE 0.0
 
 //-- Network Related --//
-#define NUM_NEURONAS_CAPA_ENTRADA 2
-//#define NUM_NEURONAS_CAPA_2 3
-#define NUM_NEURONAS_CAPA_SALIDA 1
+#define NUM_NEURONAS_CAPA_ENTRADA 10
+#define NUM_NEURONAS_CAPA_2 70
+#define NUM_NEURONAS_CAPA_SALIDA 10
 #define W_INIT 0.5
 #define LEARNING_RATE 0.01
 #define A 0.5
@@ -25,6 +25,7 @@
 #define TRAZA_INIT 0.0
 //#define RESET_TRAZA 1.0
 #define NUM_DELAYS 5
+#define MAX_EVENTS 100
 
 extern bool disparoCapa1;
 extern bool disparoCapa2;
