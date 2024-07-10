@@ -13,7 +13,7 @@
 #define POTEN_NO_SPIKE 0.0
 
 //-- Network Related --//
-#define NUM_NEURONAS_CAPA_ENTRADA 10
+#define NUM_NEURONAS_CAPA_ENTRADA 16*16*2
 #define NUM_NEURONAS_CAPA_2 70
 #define NUM_NEURONAS_CAPA_SALIDA 10
 #define W_INIT 0.5
@@ -29,4 +29,4 @@
 
 extern bool disparoCapa1;
 extern bool disparoCapa2;
-//bool disparoCapa3=false;
+extern bool disparoCapa3;

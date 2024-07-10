@@ -18,6 +18,7 @@ int winner_takes_all(NeuronaLIF (&capa)[N]) {
     // Encontrar la neurona con el mayor potencial de membrana
     for (int i = 0; i < N; ++i) {
         if (capa[i].getPotencialMembrana() > maxPotential) {
+            std::cout << "Neurona Actual: " << capa[i].getPotencialMembrana() << "Max: " << maxPotential << std::endl;
             maxPotential = capa[i].getPotencialMembrana();
             winnerIndex = i;
         }
@@ -110,7 +111,7 @@ void aplicar_STDP(int winnerIndex, double (&weights)[N][M], double (&trazas)[N][
 
 bool disparoCapa1;
 bool disparoCapa2;
-//extern bool disparoCapa3;
+bool disparoCapa3;
 
 void simulate_SNN () {
     std::cout << "1====>" << std::endl;
@@ -120,6 +121,7 @@ void simulate_SNN () {
 
     double outputCapaEntrada[NUM_NEURONAS_CAPA_ENTRADA];
     double outputCapa2[NUM_NEURONAS_CAPA_2];
+    double outputCapaSalida[NUM_NEURONAS_CAPA_SALIDA];
 
     int winnerIndex;
 
@@ -143,12 +145,9 @@ void simulate_SNN () {
     init_matrix(trazasCapa1_2,TRAZA_INIT);
     init_matrix(trazasCapa2_3,TRAZA_INIT);
 
-    //------------------------- Generacion de las señales de entrada -------------------------//
+    //------------------------- Generacion de las señales de entrada + Aprendizaje -------------------------//
 
     double input[NUM_NEURONAS_CAPA_ENTRADA];
-    for (int j = 0; j < NUM_ITER; j++){
-        input[j] = POTEN_NO_SPIKE;
-    }
 
     std::string root_directory = "C:\\Users\\alexm\\Documents\\Cuarto\\TFG\\MINST_processed_100";
 
@@ -177,6 +176,13 @@ void simulate_SNN () {
 
                                 while (event_count) {
                                     event_count = 0;
+                                    disparoCapa1=false;
+                                    disparoCapa2=false;
+                                    disparoCapa3=false;
+                                    for (int j = 0; j < NUM_ITER; j++){
+                                        input[j] = POTEN_NO_SPIKE;
+                                    }
+
                                     while (infile.read(reinterpret_cast<char*>(&event.timestamp), sizeof(event.timestamp))) {
                                         infile.read(reinterpret_cast<char*>(&event.x), sizeof(event.x));
                                         infile.read(reinterpret_cast<char*>(&event.y), sizeof(event.y));
@@ -192,20 +198,80 @@ void simulate_SNN () {
                                             break;
                                         }
 
-                                        neurona_corresp = event.x*event.y+event.x + 4096*event.polarity;
+                                        neurona_corresp = (static_cast<int>(event.x) % 16) * (static_cast<int>(event.y) % 16) + (static_cast<int>(event.x) % 16) + 16*16 * event.polarity;
+
+                                        if (neurona_corresp > max) max = neurona_corresp;
                                         //std::cout << "Corresponde a la neurona: " << neurona_corresp << std::endl;
-                                        //input[neurona_corresp]=2.0;
+                                        input[neurona_corresp]=THRESHOLD;
 
                                         event_count++;
-                                        
-                                        
-                                    }
+                                    } //En este punto se han procesado todos los eventos que ocurren en la misma milesima de segundo y se han establecido spikes en las neuronas que coresponden a las posiciones en las que han ocurrido esos eventos
+                                    
+                                    //Incremento de la variable que selecciona la milesima de segundo
                                     mod_timestamp++;
 
-                                    
+                                    //Simulacion de la capa de entrada
+                                    for (int i=0; i<NUM_NEURONAS_CAPA_ENTRADA;i++) {
+                                        simulate_entry(input[i], &capaEntrada[i], &disparoCapa1);
+                                        outputCapaEntrada[i] = capaEntrada[i].getPotencialSalida();
+                                    }
+
+                                    //Actualizacion de las trazas sinapticas de la capa de entrada
+                                    update_traces(capaEntrada, trazasCapa1_2);
+
+                                    //En la capa de entrada no se aplica STDP ya que solo replica los spikes que recibe
+
+                                    //Simulacion capa 2
+                                    for (int i=0; i<NUM_NEURONAS_CAPA_2;i++) {
+                                        simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capa2[i], &disparoCapa2, weightsCapa1_2[i]);
+                                    }
+
+                                    //STDP de capa 2
+                                    if (disparoCapa2) {
+                                        winnerIndex = winner_takes_all(capa2);
+                                        aplicar_STDP(winnerIndex,weightsCapa1_2,trazasCapa1_2);
+                                    }
+
+                                    for (int j=0; j<NUM_NEURONAS_CAPA_2;j++) {
+                                        outputCapa2[j] = capa2[j].getPotencialSalida();
+                                    }
+
+                                    std::cout << "OUTPUT DE LAS NEURONAS DE LA CAPA 2:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; ++i) {
+                                        std::cout << outputCapa2[i] << " ";
+                                    }
+                                    std::cout << std::endl;
+
+                                    //Actualizacion de trazas capa 2
+                                    update_traces(capa2, trazasCapa2_3);
+
+                                    //Simulacion capa 3
+                                    for (int i=0; i<NUM_NEURONAS_CAPA_SALIDA;i++) {
+                                        simulate(outputCapa2, NUM_NEURONAS_CAPA_2, &capaSalida[i], &disparoCapa3, weightsCapa2_3[i]);
+                                    }
+
+                                    //STDP de capa 3
+                                    if (disparoCapa3) {
+                                        winnerIndex = winner_takes_all(capaSalida);
+                                        aplicar_STDP(winnerIndex,weightsCapa2_3,trazasCapa2_3);
+                                    }
+
+                                    for (int i=0; i<NUM_NEURONAS_CAPA_SALIDA;i++) {
+                                        outputCapaSalida[i] = capaSalida[i].getPotencialSalida();
+                                    }
+
+                                    std::cout << "OUTPUT DE LAS NEURONAS DE LA ULTIMA CAPA:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; ++i) {
+                                        std::cout << outputCapaSalida[i] << " ";
+                                    }
+                                    std::cout << "\n" << std::endl;
                                 }
+
+                                event_count=-1;
+                                mod_timestamp=0;
                             }
                         }
+                        std::cout << "ID de neurona maximo es: " << max << std::endl;
                     }
                 }
             }

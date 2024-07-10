@@ -2,7 +2,7 @@
 
 
 void integrar_entradas(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, double* pesos) {
-    std::cout << "Integrando entradas..." << std::endl;
+    //std::cout << "Integrando entradas..." << std::endl;
     double aux= 0;
 
     BUCLE_AUX_INTEGRAR: for(int i=0; i<numEntradas; i++){
@@ -30,7 +30,7 @@ void simulate(double* corrientesEntrada, int numEntradas, NeuronaLIF* n, bool* d
                 if (n->getPotencialMembrana() >= n->getThr()) {
                     *disparo=true;
                     n->setPotencialSalida(POTEN_SPIKE);  //Dispara el spike
-                    std::cout << "Neurona disparada!" << std::endl;
+                    //std::cout << "Neurona disparada!" << std::endl;
                     n->setEstado(EstadoNeurona::ENESPERA);   //Cambio de estado
                 }
 
@@ -66,6 +66,6 @@ void simulate_entry(double corrienteEntrada, NeuronaLIF* n, bool* disparo) {
     if (n->getPotencialMembrana() >= n->getThr()) {
         *disparo=true;
         n->setPotencialSalida(POTEN_SPIKE);  //Dispara el spike
-        std::cout << "Neurona disparada!" << std::endl;
+        //std::cout << "Neurona disparada!" << std::endl;
     }
 }
