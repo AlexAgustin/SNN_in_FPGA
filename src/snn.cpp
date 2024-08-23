@@ -18,7 +18,7 @@ int winner_takes_all(NeuronaLIF (&capa)[N]) {
     // Encontrar la neurona con el mayor potencial de membrana
     for (int i = 0; i < N; ++i) {
         if (capa[i].getPotencialMembrana() > maxPotential) {
-            std::cout << "Neurona Actual: " << capa[i].getPotencialMembrana() << "Max: " << maxPotential << std::endl;
+            //std::cout << "Neurona Actual: " << capa[i].getPotencialMembrana() << "Max: " << maxPotential << std::endl;
             maxPotential = capa[i].getPotencialMembrana();
             winnerIndex = i;
         }
@@ -82,15 +82,23 @@ void update_weight(double (&weights)[N], double (&traces)[N]) {
 
     for (int i = 0; i < N; ++i) {
 
+        std::cout << weights[i] << " " << traces[i] << std::endl;
+
         LTPW = exp(-(weights[i] - W_INIT));
         LTPX = exp(traces[i] - A);
         LTDW = -exp(weights[i] - W_INIT);
         LTDX = exp(1 - traces[i] - A);
 
+        std::cout << "LTPW: " << LTPW << " LTPX: " << LTPX << " LTDW: " << LTDW << " LTDX: " << LTDX << std::endl;
+
         LTP = LTPW * LTPX;
         LTD = LTDW * LTDX;
 
+        std::cout << "LTP: " << LTP << " LTD: " << LTD << std::endl;
+
         weights[i] += LEARNING_RATE * (LTP + LTD);
+
+        std::cout << weights[i] << std::endl;
     }
 }
 
@@ -127,11 +135,11 @@ void simulate_SNN () {
 
     //------------------------- Creacion e inicializacion de matrices de weights -------------------------//
 
-    double weightsCapaEntrada[1][NUM_NEURONAS_CAPA_ENTRADA];
+    double weightsCapaEntrada = 1;
     double weightsCapa1_2[NUM_NEURONAS_CAPA_2][NUM_NEURONAS_CAPA_ENTRADA];
     double weightsCapa2_3[NUM_NEURONAS_CAPA_SALIDA][NUM_NEURONAS_CAPA_2];
 
-    init_matrix(weightsCapaEntrada,1);
+    //init_matrix(weightsCapaEntrada,1);
     init_matrix(weightsCapa1_2,W_INIT);
     init_matrix(weightsCapa2_3,W_INIT);
 
@@ -174,6 +182,7 @@ void simulate_SNN () {
                                     break;
                                 }
 
+
                                 while (event_count) {
                                     event_count = 0;
                                     disparoCapa1=false;
@@ -202,19 +211,31 @@ void simulate_SNN () {
 
                                         if (neurona_corresp > max) max = neurona_corresp;
                                         //std::cout << "Corresponde a la neurona: " << neurona_corresp << std::endl;
-                                        input[neurona_corresp]=THRESHOLD;
+                                        input[neurona_corresp]+=POTEN_SPIKE;
 
                                         event_count++;
                                     } //En este punto se han procesado todos los eventos que ocurren en la misma milesima de segundo y se han establecido spikes en las neuronas que coresponden a las posiciones en las que han ocurrido esos eventos
                                     
+                                    /*std::cout << "INPUT DE LA RED:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
+                                        std::cout << input[i];
+                                    }
+                                    std::cout << std::endl;*/
+
                                     //Incremento de la variable que selecciona la milesima de segundo
                                     mod_timestamp++;
 
                                     //Simulacion de la capa de entrada
                                     for (int i=0; i<NUM_NEURONAS_CAPA_ENTRADA;i++) {
-                                        simulate_entry(input[i], &capaEntrada[i], &disparoCapa1);
+                                        simulate(&input[i], 1, &capaEntrada[i], &disparoCapa1, &weightsCapaEntrada);
                                         outputCapaEntrada[i] = capaEntrada[i].getPotencialSalida();
                                     }
+
+                                    /*std::cout << "ENTRADA CAPA OUTPUT:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
+                                        std::cout << outputCapaEntrada[i] << " ";
+                                    }
+                                    std::cout << std::endl;*/
 
                                     //Actualizacion de las trazas sinapticas de la capa de entrada
                                     update_traces(capaEntrada, trazasCapa1_2);
@@ -236,8 +257,8 @@ void simulate_SNN () {
                                         outputCapa2[j] = capa2[j].getPotencialSalida();
                                     }
 
-                                    std::cout << "OUTPUT DE LAS NEURONAS DE LA CAPA 2:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; ++i) {
+                                    std::cout << "SEGUNDA CAPA OUTPUT:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; i++) {
                                         std::cout << outputCapa2[i] << " ";
                                     }
                                     std::cout << std::endl;
@@ -260,8 +281,8 @@ void simulate_SNN () {
                                         outputCapaSalida[i] = capaSalida[i].getPotencialSalida();
                                     }
 
-                                    std::cout << "OUTPUT DE LAS NEURONAS DE LA ULTIMA CAPA:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; ++i) {
+                                    std::cout << "SALIDA CAPA OUTPUT:" << std::endl;
+                                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; i++) {
                                         std::cout << outputCapaSalida[i] << " ";
                                     }
                                     std::cout << "\n" << std::endl;

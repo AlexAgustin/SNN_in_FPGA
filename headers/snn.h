@@ -9,6 +9,7 @@ namespace fs = std::filesystem;
 
 
 #include "../headers/neuron.h"
+#include "../headers/ff.h"
 
 struct ProcessedEvent {
     double timestamp;
