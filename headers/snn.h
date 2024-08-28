@@ -5,9 +5,6 @@
 #include <string>
 #include <cstdint>
 
-namespace fs = std::filesystem;
-
-
 #include "../headers/neuron.h"
 #include "../headers/ff.h"
 
@@ -18,4 +15,4 @@ struct ProcessedEvent {
     double polarity;
 };
 
-void simulate_SNN ();
+int simulate_SNN ();

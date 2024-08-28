@@ -82,23 +82,23 @@ void update_weight(double (&weights)[N], double (&traces)[N]) {
 
     for (int i = 0; i < N; ++i) {
 
-        std::cout << weights[i] << " " << traces[i] << std::endl;
+        //std::cout << weights[i] << " " << traces[i] << std::endl;
 
         LTPW = exp(-(weights[i] - W_INIT));
         LTPX = exp(traces[i] - A);
         LTDW = -exp(weights[i] - W_INIT);
         LTDX = exp(1 - traces[i] - A);
 
-        std::cout << "LTPW: " << LTPW << " LTPX: " << LTPX << " LTDW: " << LTDW << " LTDX: " << LTDX << std::endl;
+        //std::cout << "LTPW: " << LTPW << " LTPX: " << LTPX << " LTDW: " << LTDW << " LTDX: " << LTDX << std::endl;
 
         LTP = LTPW * LTPX;
         LTD = LTDW * LTDX;
 
-        std::cout << "LTP: " << LTP << " LTD: " << LTD << std::endl;
+        //std::cout << "LTP: " << LTP << " LTD: " << LTD << std::endl;
 
         weights[i] += LEARNING_RATE * (LTP + LTD);
 
-        std::cout << weights[i] << std::endl;
+        //std::cout << weights[i] << std::endl;
     }
 }
 
@@ -121,8 +121,7 @@ bool disparoCapa1;
 bool disparoCapa2;
 bool disparoCapa3;
 
-void simulate_SNN () {
-    std::cout << "1====>" << std::endl;
+int simulate_SNN () {
     NeuronaLIF capaEntrada[NUM_NEURONAS_CAPA_ENTRADA];
     NeuronaLIF capa2[NUM_NEURONAS_CAPA_2];
     NeuronaLIF capaSalida[NUM_NEURONAS_CAPA_SALIDA];
@@ -153,246 +152,324 @@ void simulate_SNN () {
     init_matrix(trazasCapa1_2,TRAZA_INIT);
     init_matrix(trazasCapa2_3,TRAZA_INIT);
 
-    //------------------------- Generacion de las señales de entrada + Aprendizaje -------------------------//
-
-    double input[NUM_NEURONAS_CAPA_ENTRADA];
-
-    std::string root_directory = "C:\\Users\\alexm\\Documents\\Cuarto\\TFG\\MINST_processed_100";
-
-    int event_count = 1,max = 0, mod_timestamp = 0;
-    int neurona_corresp=-1;
-
-    ProcessedEvent event;
-
-    try {
-        for (const auto& entry : fs::directory_iterator(root_directory)) {
-            if (fs::is_directory(entry.status())) {
-                std::cout << entry.path().string() << std::endl;
-
-                for (const auto& sub_entry : fs::directory_iterator(entry.path())) {
-                    if (fs::is_directory(sub_entry.status())) {
-                        std::cout << sub_entry.path().string() << std::endl;
-
-                        for (const auto& file_entry : fs::directory_iterator(sub_entry.path())) {
-                            if (fs::is_regular_file(file_entry.status())) {
-                                std::cout << file_entry.path().string() << std::endl;
-
-                                std::ifstream infile(file_entry.path().string(), std::ios::binary);
-                                if (!infile) {
-                                    break;
-                                }
-
-
-                                while (event_count) {
-                                    event_count = 0;
-                                    disparoCapa1=false;
-                                    disparoCapa2=false;
-                                    disparoCapa3=false;
-                                    for (int j = 0; j < NUM_ITER; j++){
-                                        input[j] = POTEN_NO_SPIKE;
-                                    }
-
-                                    while (infile.read(reinterpret_cast<char*>(&event.timestamp), sizeof(event.timestamp))) {
-                                        infile.read(reinterpret_cast<char*>(&event.x), sizeof(event.x));
-                                        infile.read(reinterpret_cast<char*>(&event.y), sizeof(event.y));
-                                        infile.read(reinterpret_cast<char*>(&event.polarity), sizeof(event.polarity));
-
-                                        /*std::cout << "Timestamp: " << event.timestamp
-                                                << ", X: " << event.x
-                                                << ", Y: " << event.y
-                                                << ", Polarity: " << event.polarity << std::endl;*/
-
-                                        if (static_cast<int>(event.timestamp / 1000) !=mod_timestamp){
-                                            //std::cout << "Evento: " << event_count << " tiene timestamp " << event.timestamp << " y el mod es " << mod_timestamp << std::endl;
-                                            break;
-                                        }
-
-                                        neurona_corresp = (static_cast<int>(event.x) % 16) * (static_cast<int>(event.y) % 16) + (static_cast<int>(event.x) % 16) + 16*16 * event.polarity;
-
-                                        if (neurona_corresp > max) max = neurona_corresp;
-                                        //std::cout << "Corresponde a la neurona: " << neurona_corresp << std::endl;
-                                        input[neurona_corresp]+=POTEN_SPIKE;
-
-                                        event_count++;
-                                    } //En este punto se han procesado todos los eventos que ocurren en la misma milesima de segundo y se han establecido spikes en las neuronas que coresponden a las posiciones en las que han ocurrido esos eventos
-                                    
-                                    /*std::cout << "INPUT DE LA RED:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
-                                        std::cout << input[i];
-                                    }
-                                    std::cout << std::endl;*/
-
-                                    //Incremento de la variable que selecciona la milesima de segundo
-                                    mod_timestamp++;
-
-                                    //Simulacion de la capa de entrada
-                                    for (int i=0; i<NUM_NEURONAS_CAPA_ENTRADA;i++) {
-                                        simulate(&input[i], 1, &capaEntrada[i], &disparoCapa1, &weightsCapaEntrada);
-                                        outputCapaEntrada[i] = capaEntrada[i].getPotencialSalida();
-                                    }
-
-                                    /*std::cout << "ENTRADA CAPA OUTPUT:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
-                                        std::cout << outputCapaEntrada[i] << " ";
-                                    }
-                                    std::cout << std::endl;*/
-
-                                    //Actualizacion de las trazas sinapticas de la capa de entrada
-                                    update_traces(capaEntrada, trazasCapa1_2);
-
-                                    //En la capa de entrada no se aplica STDP ya que solo replica los spikes que recibe
-
-                                    //Simulacion capa 2
-                                    for (int i=0; i<NUM_NEURONAS_CAPA_2;i++) {
-                                        simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capa2[i], &disparoCapa2, weightsCapa1_2[i]);
-                                    }
-
-                                    //STDP de capa 2
-                                    if (disparoCapa2) {
-                                        winnerIndex = winner_takes_all(capa2);
-                                        aplicar_STDP(winnerIndex,weightsCapa1_2,trazasCapa1_2);
-                                    }
-
-                                    for (int j=0; j<NUM_NEURONAS_CAPA_2;j++) {
-                                        outputCapa2[j] = capa2[j].getPotencialSalida();
-                                    }
-
-                                    std::cout << "SEGUNDA CAPA OUTPUT:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; i++) {
-                                        std::cout << outputCapa2[i] << " ";
-                                    }
-                                    std::cout << std::endl;
-
-                                    //Actualizacion de trazas capa 2
-                                    update_traces(capa2, trazasCapa2_3);
-
-                                    //Simulacion capa 3
-                                    for (int i=0; i<NUM_NEURONAS_CAPA_SALIDA;i++) {
-                                        simulate(outputCapa2, NUM_NEURONAS_CAPA_2, &capaSalida[i], &disparoCapa3, weightsCapa2_3[i]);
-                                    }
-
-                                    //STDP de capa 3
-                                    if (disparoCapa3) {
-                                        winnerIndex = winner_takes_all(capaSalida);
-                                        aplicar_STDP(winnerIndex,weightsCapa2_3,trazasCapa2_3);
-                                    }
-
-                                    for (int i=0; i<NUM_NEURONAS_CAPA_SALIDA;i++) {
-                                        outputCapaSalida[i] = capaSalida[i].getPotencialSalida();
-                                    }
-
-                                    std::cout << "SALIDA CAPA OUTPUT:" << std::endl;
-                                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; i++) {
-                                        std::cout << outputCapaSalida[i] << " ";
-                                    }
-                                    std::cout << "\n" << std::endl;
-                                }
-
-                                event_count=-1;
-                                mod_timestamp=0;
-                            }
-                        }
-                        std::cout << "ID de neurona maximo es: " << max << std::endl;
-                    }
-                }
-            }
-        }
-    } catch (const fs::filesystem_error& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
+    //------------------------- Montaje de la Tarjeta SD -------------------------//
+    FATFS fs;
+    FRESULT res;
+    
+    res = f_mount(&fs, "", 1);
+    if (res != FR_OK) {
+        std::cout << "Error mounting SD card: " << res << "\n" << std::endl;
+        return ERR_MOUNT_FAIL;
     }
 
-    //------------------------- Bucle principal de iteraciones de la red -------------------------//
+    //------------------------- Inicializacion de la escritura en SD -------------------------//
+    FIL resultados_file;
+    UINT bw;
+    char buff[1024];
+    int offset = 0;
 
-    /*for (int i=0; i<NUM_ITER; i++){
-        disparoCapa1=false;
-        disparoCapa2=false;
+    res = f_open(&resultados_file, "resultados.txt", FA_WRITE | FA_CREATE_ALWAYS);
+    if (res != FR_OK) {
+        std::cout << "Error opening resultados file: " << res << "\n" << std::endl;
+        return ERR_OPEN_RESULT_FILE;
+    }
 
-        
-        std::cout << "\n\nCorrientes de entrada " << i+1 << ":" << std::endl;
-        std::cout << "Input 1: " << input1[i] << std::endl;
-        std::cout << "Input 2: " << input2[i] << std::endl;
-        for (int j = 0; j < NUM_ENTRADAS; j++) {
-            //double randomValue = dis(gen); // Genera un valor aleatorio entre 0 y 1
-            //corrientesEntrada[j] = (randomValue <= PROB_ENTRADA_SPIKE) ? POTEN_NO_SPIKE : POTEN_SPIKE; // Mapea el valor a 0 o 2
-            
-        }
+    //------------------------- Inicializacion de la lectura desde SD -------------------------//
+    FIL entradas_file;
+    UINT br;
+    char file_path[256];
 
-        //------------------------- Capa 1 (ENTRADA) -------------------------//
-        
-        simulate_entry(input1[i],&capaEntrada[0],&disparoCapa1);
-        simulate_entry(input2[i],&capaEntrada[1],&disparoCapa1);
+    double input[NUM_NEURONAS_CAPA_ENTRADA];
+    int event_count = 1, max = 0, mod_timestamp = 0;
+    int neurona_corresp = -1;
+    ProcessedEvent event;
 
-        outputCapaEntrada[0] = capaEntrada[0].getPotencialSalida();
-        outputCapaEntrada[1] = capaEntrada[1].getPotencialSalida();
+    // Recorre la base de dato MNIST
+    for (int digit = 0; digit <= 9; digit++) {
+        for (int scale = 4; scale <= 16; scale *= 2) {
+            for (int file_num = 1; file_num <= 1000; file_num++) {
+                sprintf(file_path, "MNIST_processed/processed_data%d/scale%d/mnist_%d_scale%d_%04d.bin",scale, scale, digit, scale, file_num);
 
-        update_traces(capaEntrada, trazasCapa1_2);
-        
-        for (int k=0; k<NUM_NEURONAS_CAPA_ENTRADA;k++) {
-            simulate(&corrientesEntrada[k], NUM_ENTRADAS/NUM_NEURONAS_CAPA_ENTRADA, &capaEntrada[k], &disparoCapa1, weightsCapaEntry[k]);
-            outputCapaEntrada[k] = capaEntrada[k].getPotencialSalida();
-        }
+                // Abre el archivo binario
+                res = f_open(&entradas_file, file_path, FA_READ);
+                if (res != FR_OK) {
+                    sprintf(buff, "Error opening file: %s\n", file_path);
+                    // Registra el error de lectura en el fichero de salida
+                    res = f_write(&resultados_file,file_path,strlen(file_path),&bw);
+                    if (res != FR_OK || bw != strlen(file_path)) {
+                        f_close(&resultados_file);  // Se cierra fichero de resultados
+                        f_close(&entradas_file);    // Se cierra fichero de entrada
+                        f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                        return ERR_WRITE_FAIL_11;
+                    }
+                    continue; //Continuar con el siguiente fichero de entrada
+                }
 
-        std::cout << "\nRESULTADOS CAPA ENTRADA: " << std::endl;
-        for (int k=0;k<NUM_NEURONAS_CAPA_ENTRADA;k++){
-            std::cout << "Neurona " << k+1 << std::endl;
-            std::cout << "Potencial de la membrana de la neurona: " << capaEntrada[k].getPotencialMembrana() << std::endl;
-            std::cout << "Potencial de salida de la neurona: " << capaEntrada[k].getPotencialSalida() << std::endl;
-        }
+                // Registra la ruta del archivo en el fichero de salida
+                res = f_write(&resultados_file,file_path,strlen(file_path),&bw);
+                if (res != FR_OK || bw != strlen(file_path)) {
+                    f_close(&resultados_file);  // Se cierra fichero de resultados
+                    f_close(&entradas_file);    // Se cierra fichero de entrada
+                    f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                    return ERR_WRITE_FAIL_1;
+                }
 
-        //Tras la capa de entrada no se aplica STDP
+                // Procesa el archivo binario por eventos
+                // El programa sale del bucle cuando la cuenta de eventos se mantiene en 0 en una de las iteraciones
+                while (event_count) {
 
-       //------------------------- Capa 2 (INTERMEDIA 1) -------------------------//
+                    // Reset de variables del entornos
+                    event_count = 0;
+                    disparoCapa1 = false;
+                    disparoCapa2 = false;
+                    disparoCapa3 = false;
+                    for (int j = 0; j < NUM_ITER; j++) {
+                        input[j] = POTEN_NO_SPIKE;
+                    }
 
-        for (int k=0; k<NUM_NEURONAS_CAPA_2;k++) {
-            simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capa2[k], &disparoCapa2);
-            corrientesCapa2[k] = capa2[k].getPotencialSalida();
-        }
+                    // Bucle en el que se leen y procesan lineas del binario (eventos)
+                    while (f_read(&entradas_file, &event.timestamp, sizeof(event.timestamp), &br) == FR_OK && br == sizeof(event.timestamp)) {
+                        f_read(&entradas_file, &event.x, sizeof(event.x), &br);
+                        f_read(&entradas_file, &event.y, sizeof(event.y), &br);
+                        f_read(&entradas_file, &event.polarity, sizeof(event.polarity), &br);
 
-        std::cout << "\nRESULTADOS CAPA 2: " << std::endl;
-        for (int k=0;k<NUM_NEURONAS_CAPA_2;k++){
-            std::cout << "Neurona " << k+1 << std::endl;
-            std::cout << "Potencial de la membrana de la neurona: " << capa2[k].getPotencialMembrana() << std::endl;
-            std::cout << "Potencial de salida de la neurona: " << capa2[k].getPotencialSalida() << std::endl;
-        }
+                        // Registro de la informacion del evento leido
+                        sprintf(buff, "Timestamp: %f, X: %f, Y: %f, Polarity: %f", event.timestamp, event.x, event.y, event.polarity);
+                        res = f_write(&resultados_file,buff,strlen(buff),&bw);
+                        if (res != FR_OK || bw != strlen(buff)) {
+                            f_close(&resultados_file);  // Se cierra fichero de resultados
+                            f_close(&entradas_file);    // Se cierra fichero de entrada
+                            f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                            return ERR_WRITE_FAIL_2;
+                        }
+                        
+                        // Comprobacion de que el evento ocurre en la misma milesima de segundo
+                        if (static_cast<int>(event.timestamp / 1000) != mod_timestamp) {
+                            //Registro de la informacion del timestamp y la milesima de segundo en la que se esta trabajando (mod_timestamp)
+                            sprintf(buff, "Evento: %d tiene timestamp %f y el mod es %d", event_count, event.timestamp, mod_timestamp);
+                            res = f_write(&resultados_file,buff,strlen(buff),&bw);
+                            if (res != FR_OK || bw != strlen(buff)) {
+                                f_close(&resultados_file);  // Se cierra fichero de resultados
+                                f_close(&entradas_file);    // Se cierra fichero de entrada
+                                f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                                return ERR_WRITE_FAIL_3;
+                            }
+                            break;
+                        }
 
-        if (disparoCapa2) {
-            winnerIndex = winner_takes_all(capa2,NUM_NEURONAS_CAPA_2);
-            aplicar_STDP(capaEntrada,NUM_NEURONAS_CAPA_ENTRADA,capa2,NUM_NEURONAS_CAPA_2,winnerIndex,weightsCapa1_2,trazasCapa1_2);
-        }
-        
-        //------------------------- Capa 3 (SALIDA) -------------------------//
+                        // Calculo de la neurona a la que corresponde el evento que se esta tratando
+                        neurona_corresp = (static_cast<int>(event.x) % GRID) * (static_cast<int>(event.y) % GRID) + (static_cast<int>(event.x) % GRID) + GRID * GRID * event.polarity;
+                        // Registro de la neurona a la que corresponde el evento que se esta tratando
+                        sprintf(buff, "Corresponde a la neurona: %d", neurona_corresp);
+                        res = f_write(&resultados_file,buff,strlen(buff),&bw);
+                        if (res != FR_OK || bw != strlen(buff)) {
+                            f_close(&resultados_file);  // Se cierra fichero de resultados
+                            f_close(&entradas_file);    // Se cierra fichero de entrada
+                            f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                            return ERR_WRITE_FAIL_4;
+                        }
 
-        for (int k=0; k<NUM_NEURONAS_CAPA_SALIDA;k++) {
-            simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capaSalida[k], &disparoCapa2, weightsCapa1_2[k]);
-        }
+                        // Incremento del potencial de entrada de la neurona correspondiente
+                        input[neurona_corresp] += POTEN_SPIKE;
 
-        std::cout << "\nRESULTADOS CAPA salida: " << std::endl;
-        for (int k=0;k<NUM_NEURONAS_CAPA_SALIDA;k++){
-            std::cout << "Neurona " << std::endl;
-            std::cout << "Potencial de la membrana de la neurona: " << capaSalida[k].getPotencialMembrana() << std::endl;
-            std::cout << "Potencial de salida de la neurona: " << capaSalida[k].getPotencialSalida() << std::endl;
-        }
+                        // Control del indice de neurona maximo para control de errores
+                        if (neurona_corresp > max) max = neurona_corresp;
+                    
+                        // Incremento del numero de eventos tratados
+                        event_count++;
+                    }
 
-        if (disparoCapa2) {
-            winnerIndex = winner_takes_all(capaSalida);
-            aplicar_STDP(winnerIndex,weightsCapa1_2,trazasCapa1_2);
-        }
+                    // En este punto se han procesado todos los eventos que ocurren en la misma milesima de segundo 
+                    // y se han establecido spikes en las neuronas que coresponden a las posiciones en las que han ocurrido esos eventos
 
-        for (int k=0;k<NUM_NEURONAS_CAPA_SALIDA;k++){
-            for (int l=0; l<NUM_NEURONAS_CAPA_ENTRADA; l++){
-                std::cout << "\n" << k+1 << std::endl;
-                std::cout << "weights " << k+1 << std::endl;
-                std::cout << "[" << k << "] [" << l << "] = " << weightsCapa1_2[k][l] << std::endl;
+                    //-------------------- Registrar entradas a la red  --------------------//
+                    offset = 0;
+
+                    // Se copia la cabecera al buffer
+                    offset += sprintf(buff + offset, "INPUT DE LA RED:\n");
+
+                    // Se itera sobre input y se escriben en el buffer
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
+                        offset += sprintf(buff + offset, "%f ", input[i]);
+
+                        // Si el buffer está casi lleno, es escribe en el archivo y se reinicia
+                        if (offset > sizeof(buff) - 50) {  // Se deja algo de espacio para evitar desbordamientos
+                            res = f_write(&resultados_file, buff, offset, &bw);
+                            if (res != FR_OK || bw != offset) {
+                                f_close(&resultados_file);  // Se cierra fichero de resultados
+                                f_close(&entradas_file);    // Se cierra fichero de entrada
+                                f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                                return ERR_WRITE_FAIL_6;  
+                            }
+                            offset = 0;  // Se reinicia el offset después de escribir
+                        }
+                    }
+
+                    // Se escribe el resto de datos(si los hay)
+                    if (offset > 0) {
+                        offset += sprintf(buff + offset, "\n");  // Se añade una nueva línea al final
+                        res = f_write(&resultados_file, buff, offset, &bw);
+                        if (res != FR_OK || bw != offset) {
+                            f_close(&resultados_file);  // Se cierra fichero de resultados
+                            f_close(&entradas_file);    // Se cierra fichero de entrada
+                            f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                            return ERR_WRITE_FAIL_7;
+                        }   
+                    }
+                    //---------------------------------------------------------------------------------//
+
+                    // Incremento de la variable que selecciona la milesima de segundo
+                    mod_timestamp++;
+
+                    // Simulación de la capa de entrada
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
+                        simulate(&input[i], 1, &capaEntrada[i], &disparoCapa1, &weightsCapaEntrada);
+                        outputCapaEntrada[i] = capaEntrada[i].getPotencialSalida();
+                    }
+
+                    //-------------------- Registrar salidas de la capa de entrada  --------------------//
+                    offset = 0;
+
+                    // Se copia la cabecera al buffer
+                    offset += sprintf(buff + offset, "CAPA ENTRADA OUTPUT:\n");
+
+                    // Iteramos sobre outputCapaEntrada y escribimos en el buffer
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_ENTRADA; i++) {
+                        offset += sprintf(buff + offset, "%f ", outputCapaEntrada[i]);
+
+                        // Si el buffer está casi lleno, lo escribimos en el archivo y lo reiniciamos
+                        if (offset > sizeof(buff) - 50) {  // Deja algo de espacio para evitar desbordamientos
+                            res = f_write(&resultados_file, buff, offset, &bw);
+                            if (res != FR_OK || bw != offset) {
+                                f_close(&resultados_file);  // Se cierra fichero de resultados
+                                f_close(&entradas_file);    // Se cierra fichero de entrada
+                                f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                                return ERR_WRITE_FAIL_6;  
+                            }
+                            offset = 0;  // Reinicia el offset después de escribir
+                        }
+                    }
+
+                    // Escribir el resto de datos(si los hay)
+                    if (offset > 0) {
+                        offset += sprintf(buff + offset, "\n");  // Añadir nueva línea al final si hay datos pendientes
+                        res = f_write(&resultados_file, buff, offset, &bw);
+                        if (res != FR_OK || bw != offset) {
+                            f_close(&resultados_file);  // Se cierra fichero de resultados
+                            f_close(&entradas_file);    // Se cierra fichero de entrada
+                            f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                            return ERR_WRITE_FAIL_7;
+                        }   
+                    }
+                    //---------------------------------------------------------------------------------//
+
+
+                    // Actualización de las trazas sinápticas de la capa de entrada
+                    update_traces(capaEntrada, trazasCapa1_2);
+
+                    // En la capa de entrada no se aplica STDP ya que solo replica los spikes que recibe
+
+                    // Simulación capa 2
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; i++) {
+                        simulate(outputCapaEntrada, NUM_NEURONAS_CAPA_ENTRADA, &capa2[i], &disparoCapa2, weightsCapa1_2[i]);
+                    }
+
+                    // STDP de capa 2
+                    if (disparoCapa2) {
+                        winnerIndex = winner_takes_all(capa2);
+                        aplicar_STDP(winnerIndex, weightsCapa1_2, trazasCapa1_2);
+                    }
+
+                    for (int j = 0; j < NUM_NEURONAS_CAPA_2; j++) {
+                        outputCapa2[j] = capa2[j].getPotencialSalida();
+                    }
+
+                    //-------------------- Registrar salidas de la capa 2  --------------------//
+                    offset = 0;
+
+                    // Se copia la cabecera al buffer
+                    offset += sprintf(buff + offset, "SEGUNDA CAPA OUTPUT:\n");
+
+                    // Iteramos sobre outputCapa2 y escribimos en el buffer
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_2; i++) {
+                        offset += sprintf(buff + offset, "%f ", outputCapa2[i]);
+
+                        // Si el buffer está casi lleno, lo escribimos en el archivo y lo reiniciamos
+                        if (offset > sizeof(buff) - 50) {  // Deja algo de espacio para evitar desbordamientos
+                            res = f_write(&resultados_file, buff, offset, &bw);
+                            if (res != FR_OK || bw != offset) {
+                                f_close(&resultados_file);  // Se cierra fichero de resultados
+                                f_close(&entradas_file);    // Se cierra fichero de entrada
+                                f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                                return ERR_WRITE_FAIL_8;  
+                            }
+                            offset = 0;  // Reinicia el offset después de escribir
+                        }
+                    }
+
+                    // Escribir el resto de datos(si los hay)
+                    if (offset > 0) {
+                        offset += sprintf(buff + offset, "\n");  // Añadir nueva línea al final si hay datos pendientes
+                        res = f_write(&resultados_file, buff, offset, &bw);
+                        if (res != FR_OK || bw != offset) {
+                            f_close(&resultados_file);  // Se cierra fichero de resultados
+                            f_close(&entradas_file);    // Se cierra fichero de entrada
+                            f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                            return ERR_WRITE_FAIL_9; 
+                        }   
+                    }
+                    //------------------------------------------------------------------------//
+
+                    // Actualización de trazas capa 2
+                    update_traces(capa2, trazasCapa2_3);
+
+                    // Simulación capa 3
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; i++) {
+                        simulate(outputCapa2, NUM_NEURONAS_CAPA_2, &capaSalida[i], &disparoCapa3, weightsCapa2_3[i]);
+                    }
+
+                    // STDP de capa 3
+                    if (disparoCapa3) {
+                        winnerIndex = winner_takes_all(capaSalida);
+                        aplicar_STDP(winnerIndex, weightsCapa2_3, trazasCapa2_3);
+                    }
+
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; i++) {
+                        outputCapaSalida[i] = capaSalida[i].getPotencialSalida();
+                    }
+
+
+                    //-------------------- Registrar salidas de la red  --------------------//
+                    offset = 0;
+                    offset += sprintf(buff + offset, "SALIDA CAPA OUTPUT:\n");
+
+                    for (int i = 0; i < NUM_NEURONAS_CAPA_SALIDA; i++) {
+                        offset += sprintf(buff + offset, "%f ", outputCapaSalida[i]);
+                    }
+
+                    offset += sprintf(buff + offset, "\n\n");  // Añadir una nueva línea al final
+
+                    // Escribir todo el contenido del buffer en el archivo de una sola vez
+                    res = f_write(&resultados_file, buff, offset, &bw);
+                    if (res != FR_OK || bw != strlen(buff)) {
+                        f_close(&resultados_file);  // Se cierra fichero de resultados
+                        f_close(&entradas_file);    // Se cierra fichero de entrada
+                        f_mount(NULL, "", 1);       // Se desmonta sistema de archivos
+                        return ERR_WRITE_FAIL_10;
+                    }
+                }
+                //----------------------------------------------------------------------//
+
+                event_count = -1;
+                mod_timestamp = 0;
+
+                f_close(&entradas_file);
             }
         }
+    }
 
-        for (int k=0;k<NUM_NEURONAS_CAPA_SALIDA;k++){
-            for (int l=0; l<NUM_NEURONAS_CAPA_ENTRADA; l++){
-                std::cout << "\n" << std::endl;
-                std::cout << "traces " << k+1 << std::endl;
-                std::cout << "[" << k << "] [" << l << "] = " << trazasCapa1_2[k][l] << std::endl;
-            }
-        }
-    }*/
+    // Se desmonta el sistema de archivos
+    f_mount(NULL, "", 1);
 
+    return NO_ERR;
 }
