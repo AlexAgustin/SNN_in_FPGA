@@ -1,0 +1,51 @@
+Timestamp: 0, X: 37, Y: 23, Polarity: 1
+Corresponde a la neurona: 296
+Timestamp: 46, X: 79, Y: 57, Polarity: 1
+Corresponde a la neurona: 406
+Timestamp: 55, X: 60, Y: 77, Polarity: 0
+Corresponde a la neurona: 168
+Timestamp: 87, X: 63, Y: 96, Polarity: 1
+Corresponde a la neurona: 271
+Timestamp: 112, X: 101, Y: 94, Polarity: 0
+Corresponde a la neurona: 75
+Timestamp: 169, X: 67, Y: 80, Polarity: 0
+Corresponde a la neurona: 3
+Timestamp: 175, X: 36, Y: 76, Polarity: 1
+Corresponde a la neurona: 308
+Timestamp: 188, X: 104, Y: 86, Polarity: 0
+Corresponde a la neurona: 56
+Timestamp: 208, X: 62, Y: 96, Polarity: 1
+Corresponde a la neurona: 270
+Timestamp: 222, X: 96, Y: 54, Polarity: 0
+Corresponde a la neurona: 0
+Timestamp: 227, X: 114, Y: 46, Polarity: 0
+Corresponde a la neurona: 30
+Timestamp: 287, X: 43, Y: 63, Polarity: 0
+Corresponde a la neurona: 176
+Timestamp: 318, X: 77, Y: 82, Polarity: 0
+Corresponde a la neurona: 39
+Timestamp: 374, X: 47, Y: 17, Polarity: 0
+Corresponde a la neurona: 30
+Timestamp: 393, X: 77, Y: 32, Polarity: 0
+Corresponde a la neurona: 13
+Timestamp: 399, X: 43, Y: 65, Polarity: 0
+Corresponde a la neurona: 22
+Timestamp: 419, X: 47, Y: 61, Polarity: 0
+Corresponde a la neurona: 210
+Timestamp: 580, X: 21, Y: 65, Polarity: 1
+Corresponde a la neurona: 266
+Timestamp: 603, X: 69, Y: 98, Polarity: 1
+Corresponde a la neurona: 271
+Timestamp: 616, X: 64, Y: 78, Polarity: 0
+Corresponde a la neurona: 0
+Timestamp: 638, X: 89, Y: 45, Polarity: 0
+Corresponde a la neurona: 126
+Timestamp: 665, X: 60, Y: 76, Polarity: 0
+Corresponde a la neurona: 156
+Timestamp: 735, X: 49, Y: 87, Polarity: 1
+Corresponde a la neurona: 264
+Timestamp: 799, X: 45, Y: 18, Polarity: 0
+Corresponde a la neurona: 39
+Timestamp: 997, X: 33, Y: 75, Polarity: 1
+Corresponde a la neurona: 268
+Timestamp: 1003, X: 70, Y: 29, Polarity: 0
