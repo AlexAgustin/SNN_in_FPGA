@@ -1,0 +1,138 @@
+MINST_processed_100\processed_data0
+MINST_processed_100\processed_data0\scale16
+MINST_processed_100\processed_data0\scale16\mnist_0_scale16_0001.bin
+Timestamp: 0, X: 37, Y: 23, Polarity: 1
+Corresponde a la neurona: 296
+Timestamp: 46, X: 79, Y: 57, Polarity: 1
+Corresponde a la neurona: 406
+Timestamp: 55, X: 60, Y: 77, Polarity: 0
+Corresponde a la neurona: 168
+Timestamp: 87, X: 63, Y: 96, Polarity: 1
+Corresponde a la neurona: 271
+Timestamp: 112, X: 101, Y: 94, Polarity: 0
+Corresponde a la neurona: 75
+Timestamp: 169, X: 67, Y: 80, Polarity: 0
+Corresponde a la neurona: 3
+Timestamp: 175, X: 36, Y: 76, Polarity: 1
+Corresponde a la neurona: 308
+Timestamp: 188, X: 104, Y: 86, Polarity: 0
+Corresponde a la neurona: 56
+Timestamp: 208, X: 62, Y: 96, Polarity: 1
+Corresponde a la neurona: 270
+Timestamp: 222, X: 96, Y: 54, Polarity: 0
+Corresponde a la neurona: 0
+Timestamp: 227, X: 114, Y: 46, Polarity: 0
+Corresponde a la neurona: 30
+Timestamp: 287, X: 43, Y: 63, Polarity: 0
+Corresponde a la neurona: 176
+Timestamp: 318, X: 77, Y: 82, Polarity: 0
+Corresponde a la neurona: 39
+Timestamp: 374, X: 47, Y: 17, Polarity: 0
+Corresponde a la neurona: 30
+Timestamp: 393, X: 77, Y: 32, Polarity: 0
+Corresponde a la neurona: 13
+Timestamp: 399, X: 43, Y: 65, Polarity: 0
+Corresponde a la neurona: 22
+Timestamp: 419, X: 47, Y: 61, Polarity: 0
+Corresponde a la neurona: 210
+Timestamp: 580, X: 21, Y: 65, Polarity: 1
+Corresponde a la neurona: 266
+Timestamp: 603, X: 69, Y: 98, Polarity: 1
+Corresponde a la neurona: 271
+Timestamp: 616, X: 64, Y: 78, Polarity: 0
+Corresponde a la neurona: 0
+Timestamp: 638, X: 89, Y: 45, Polarity: 0
+Corresponde a la neurona: 126
+Timestamp: 665, X: 60, Y: 76, Polarity: 0
+Corresponde a la neurona: 156
+Timestamp: 735, X: 49, Y: 87, Polarity: 1
+Corresponde a la neurona: 264
+Timestamp: 799, X: 45, Y: 18, Polarity: 0
+Corresponde a la neurona: 39
+Timestamp: 997, X: 33, Y: 75, Polarity: 1
+Corresponde a la neurona: 268
+Timestamp: 1003, X: 70, Y: 29, Polarity: 0
+Evento: 25 tiene timestamp 1003 y el mod es 0
+INPUT DE LA RED:
+40020000000002000000002000000040000000040000000000000000200000000000000000020000000000000000000000000000000000000000000000000020000000000000000000000000000020000000000020000000200000000000000000000000000000000020000000000000000000000000000000000000000000000000000020202024000000000000000000000000200000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+ENTRADA CAPA OUTPUT:
+2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SEGUNDA CAPA OUTPUT:
+2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SALIDA CAPA OUTPUT:
+0 0 0 0 0 0 0 0 0 0 
+
+Timestamp: 1038, X: 58, Y: 20, Polarity: 0
+Corresponde a la neurona: 50
+Timestamp: 1120, X: 49, Y: 71, Polarity: 0
+Corresponde a la neurona: 8
+Timestamp: 1126, X: 64, Y: 46, Polarity: 1
+Corresponde a la neurona: 256
+Timestamp: 1176, X: 81, Y: 81, Polarity: 0
+Corresponde a la neurona: 2
+Timestamp: 1211, X: 80, Y: 58, Polarity: 1
+Corresponde a la neurona: 256
+Timestamp: 1232, X: 24, Y: 67, Polarity: 1
+Corresponde a la neurona: 288
+Timestamp: 1253, X: 25, Y: 67, Polarity: 1
+Corresponde a la neurona: 292
+Timestamp: 1261, X: 27, Y: 34, Polarity: 1
+Corresponde a la neurona: 289
+Timestamp: 1279, X: 76, Y: 55, Polarity: 1
+Corresponde a la neurona: 352
+Timestamp: 1290, X: 22, Y: 48, Polarity: 1
+Corresponde a la neurona: 262
+Timestamp: 1291, X: 26, Y: 83, Polarity: 1
+Corresponde a la neurona: 296
+Timestamp: 1307, X: 84, Y: 75, Polarity: 1
+Corresponde a la neurona: 304
+Timestamp: 1309, X: 51, Y: 17, Polarity: 0
+Corresponde a la neurona: 6
+Timestamp: 1338, X: 40, Y: 49, Polarity: 0
+Corresponde a la neurona: 16
+Timestamp: 1338, X: 75, Y: 81, Polarity: 0
+Corresponde a la neurona: 22
+Timestamp: 1369, X: 30, Y: 73, Polarity: 1
+Corresponde a la neurona: 396
+Timestamp: 1506, X: 60, Y: 21, Polarity: 0
+Corresponde a la neurona: 72
+Timestamp: 1523, X: 81, Y: 38, Polarity: 0
+Corresponde a la neurona: 7
+Timestamp: 1557, X: 50, Y: 70, Polarity: 0
+Corresponde a la neurona: 14
+Timestamp: 1559, X: 65, Y: 23, Polarity: 0
+Corresponde a la neurona: 8
+Timestamp: 1566, X: 99, Y: 61, Polarity: 0
+Corresponde a la neurona: 42
+Timestamp: 1626, X: 64, Y: 24, Polarity: 0
+Corresponde a la neurona: 0
+Timestamp: 1664, X: 66, Y: 26, Polarity: 0
+Corresponde a la neurona: 22
+Timestamp: 1678, X: 50, Y: 88, Polarity: 1
+Corresponde a la neurona: 274
+Timestamp: 1695, X: 84, Y: 38, Polarity: 0
+Corresponde a la neurona: 28
+Timestamp: 1697, X: 84, Y: 41, Polarity: 0
+Corresponde a la neurona: 40
+Timestamp: 1720, X: 61, Y: 93, Polarity: 1
+Corresponde a la neurona: 438
+Timestamp: 1767, X: 58, Y: 75, Polarity: 0
+Corresponde a la neurona: 120
+Timestamp: 1819, X: 62, Y: 21, Polarity: 0
+Corresponde a la neurona: 84
+Timestamp: 1863, X: 83, Y: 40, Polarity: 0
+Corresponde a la neurona: 27
+Timestamp: 1955, X: 57, Y: 75, Polarity: 0
+Corresponde a la neurona: 108
+Timestamp: 1990, X: 37, Y: 77, Polarity: 1
+Corresponde a la neurona: 326
+Timestamp: 2021, X: 81, Y: 39, Polarity: 0
+Evento: 32 tiene timestamp 2021 y el mod es 1
+INPUT DE LA RED:
+20200022400000202000004000022000000000002020000000200000200000000000000020020000000020000000000000000000000020000000000020000020000000000000000000000000000020000000000020000000200000000000000000000000000000000020000000000000000000000000000000000000000000004000002020202024002000000000000022002000400000002000200000000000000000200000000000000000000000002000000000000000000000000000000000000000000020000000002000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000
+ENTRADA CAPA OUTPUT:
+0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SEGUNDA CAPA OUTPUT:
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SALIDA CAPA OUTPUT:
+0 0 0 0 0 0 0 0 0 0 
